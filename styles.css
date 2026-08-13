@@ -180,13 +180,17 @@ nav.main a:hover{color:var(--accent)}
    Media can be: a real screenshot (.tile) or a typographic
    brand-gradient tile (.tile.type) when no imagery exists yet.
    ============================================================ */
-.mosaic-section{padding:var(--s64) 0 0}          /* mosaic runs to the page edges */
+/* Contained to the same measure as every other content block — NOT full-bleed.
+   One case per row, so each gets full width and full focus. */
+.mosaic-section{padding:var(--s96) 0}
 .mosaic-head{max-width:var(--maxw);margin:0 auto var(--s48);padding:0 24px;
   display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.case-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.case-mosaic{display:grid;grid-template-columns:1fr;gap:var(--s32);
+  max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-.tile{display:block;position:relative;background:var(--ink);overflow:hidden}
-.tile .media{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.tile{display:block;position:relative;background:var(--ink);overflow:hidden;
+  border-radius:var(--r-lg)}
+.tile .media{position:relative;aspect-ratio:2.2/1;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .tile .media img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
 .tile:hover .media img{transform:scale(1.04)}
 /* scrim: light at top, heavy at the bottom where the text sits —
@@ -202,11 +206,11 @@ nav.main a:hover{color:var(--accent)}
    which keeps the format reusable for any screenshot or photo */
 .tile .overlay{position:absolute;inset:0;z-index:2;
   display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
-  text-align:left;padding:32px;gap:6px}
+  text-align:left;padding:40px;gap:8px}
 .tile .client{color:rgba(255,255,255,.8);font-size:.9rem;font-weight:600;letter-spacing:.02em;
   text-transform:uppercase}
-.tile .title{color:#fff;font-size:clamp(1.4rem,2.2vw,2rem);font-weight:700;line-height:1.15;
-  letter-spacing:-.01em;max-width:24ch;text-wrap:balance}
+.tile .title{color:#fff;font-size:clamp(1.6rem,2.8vw,2.6rem);font-weight:700;line-height:1.12;
+  letter-spacing:-.015em;max-width:26ch;text-wrap:balance}
 
 /* caption strip — part of the tile, never over the image */
 .tile .cap{background:var(--ink);padding:18px 22px 20px}
@@ -218,8 +222,14 @@ nav.main a:hover{color:var(--accent)}
 .tile.type .media{background:var(--brand)}
 .tile.type .media::after{display:none}
 .tile.type .client{color:rgba(11,43,43,.7)}
-.tile.type .title{color:#0b2b2b;font-size:clamp(1.9rem,3.6vw,3rem);max-width:18ch}
+.tile.type .title{color:#0b2b2b;font-size:clamp(2rem,4vw,3.4rem);max-width:20ch}
 .tile.type .chip{background:rgba(11,43,43,.9);color:#fff}
+/* Customertimes tile — their brand navy */
+.tile.type.ct .media{background:linear-gradient(120deg,#041B4D,#0A2E6E)}
+.tile.type.ct .title{color:#fff}
+.tile.type.ct .client{color:rgba(255,255,255,.75)}
+.tile.type.ct .chip{background:rgba(255,255,255,.92);color:#041B4D}
+
 /* alternate dark typographic tile, for rhythm across the grid */
 .tile.type.ink .media{background:var(--navy)}
 .tile.type.ink .title{color:#fff}
@@ -227,8 +237,8 @@ nav.main a:hover{color:var(--accent)}
 .tile.type.ink .chip{background:rgba(255,255,255,.92);color:var(--ink)}
 
 @media (max-width:860px){
-  .case-mosaic{grid-template-columns:1fr}
-  .tile .media{aspect-ratio:5/4}
+  .tile .media{aspect-ratio:4/3}
+  .tile .overlay{padding:26px}
 }
 @media (prefers-reduced-motion:reduce){
   .tile .media img,.tile:hover .media img{transition:none;transform:none}
@@ -290,8 +300,13 @@ footer .fcol a:hover{color:#fff}
 .tbd{background:rgba(47,158,107,.15);color:var(--accent);padding:1px 7px;border-radius:5px;font-size:.85em;font-weight:700}
 
 /* ---- Placeholder member wordmarks (strip + case attribution) ---- */
-.memlogo{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:17px;color:#8a94a1;letter-spacing:-.02em}
+.memlogo{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:17px;color:#8a94a1;letter-spacing:-.02em}
 .memlogo i{width:15px;height:15px;border-radius:5px;background:var(--brand);flex:none}
+/* real member mark on its brand ground + name in our font (Ref #3 unification) */
+.memlogo .mark{width:26px;height:26px;border-radius:7px;flex:none;
+  display:flex;align-items:center;justify-content:center}
+.memlogo .mark img{width:18px;height:18px;display:block}
+.memlogo .mark.ct{background:#041B4D}
 .case .by .memlogo{font-size:13px} .case .by .memlogo i{width:12px;height:12px}
 
 /* ---- Case thumb decoration (placeholder art) ---- */
