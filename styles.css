@@ -175,98 +175,72 @@ nav.main a:hover{color:var(--accent)}
 .case.feature h3{font-size:1.7rem}
 
 /* ============================================================
-   CASE MOSAIC — banda.agency format
-   Full-bleed 2-col grid, zero gaps, media tile + caption strip.
-   Media can be: a real screenshot (.tile) or a typographic
-   brand-gradient tile (.tile.type) when no imagery exists yet.
+   CASE MOSAIC — Pentagram structure
+   Clean image (nothing on top) -> header -> short description with
+   concrete results -> domain chip. Hover reveals "work done".
+   Contained to the text measure, one case per row.
    ============================================================ */
-/* Contained to the same measure as every other content block — NOT full-bleed.
-   One case per row, so each gets full width and full focus. */
 .mosaic-section{padding:var(--s96) 0}
 .mosaic-head{max-width:var(--maxw);margin:0 auto var(--s48);padding:0 24px;
   display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.case-mosaic{display:grid;grid-template-columns:1fr;gap:var(--s32);
+.case-mosaic{display:grid;grid-template-columns:1fr;gap:var(--s80);
   max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-.tile{display:block;position:relative;background:var(--ink);overflow:hidden;
-  border-radius:var(--r-lg)}
-.tile .media{position:relative;aspect-ratio:2.2/1;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.tile .media img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
-.tile:hover .media img{transform:scale(1.04)}
-/* scrim: light at top, heavy at the bottom where the text sits —
-   so overlay copy stays legible over ANY case image without fighting its content */
-.tile .media::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(6,14,22,.22) 0%,rgba(6,14,22,.12) 35%,rgba(6,14,22,.80) 100%)}
+.tile{display:block;position:relative;background:transparent}
 
-.tile .chip{position:absolute;top:20px;left:20px;z-index:3;
-  background:rgba(255,255,255,.92);color:var(--ink);
-  font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  padding:7px 13px;border-radius:30px}
-/* overlay anchored bottom-left — never collides with the image subject,
-   which keeps the format reusable for any screenshot or photo */
-.tile .overlay{position:absolute;inset:0;z-index:2;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
-  text-align:left;padding:40px;gap:8px}
-.tile .client{color:rgba(255,255,255,.8);font-size:.9rem;font-weight:600;letter-spacing:.02em;
-  text-transform:uppercase}
-.tile .title{color:#fff;font-size:clamp(1.6rem,2.8vw,2.6rem);font-weight:700;line-height:1.12;
-  letter-spacing:-.015em;max-width:26ch;text-wrap:balance}
+/* --- the image: clean, no elements over it in the default state --- */
+.tile .media{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:var(--r-lg);
+  background:var(--ink);display:flex;align-items:center;justify-content:center}
+.tile .media img{width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.tile:hover .media img{transform:scale(1.03)}
+/* artwork word for cases that have no photography yet */
+.tile .artwork{position:relative;z-index:1;padding:0 40px;text-align:center;
+  font-size:clamp(2rem,4.4vw,3.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;
+  color:#0b2b2b;transition:opacity .35s}
+.tile.ink .artwork,.tile.ct .artwork{color:#fff}
+.tile:hover .artwork{opacity:.25}
 
-/* caption strip — part of the tile, never over the image */
-.tile .cap{background:var(--ink);padding:18px 22px 20px}
-.tile .cap b{display:block;color:#fff;font-size:.95rem;font-weight:600}
-.tile .cap span{display:block;color:#8a94a1;font-size:.9rem;margin-top:2px;
-  font-variant-numeric:tabular-nums}
+/* --- hover micro-interaction: domain + work done --- */
+.tile .media::after{content:"";position:absolute;inset:0;z-index:2;
+  background:rgba(6,14,22,.78);opacity:0;transition:opacity .35s}
+.tile:hover .media::after{opacity:1}
+.tile .reveal{position:absolute;inset:0;z-index:3;pointer-events:none;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  gap:14px;padding:clamp(24px,4vw,48px);
+  opacity:0;transform:translateY(10px);
+  transition:opacity .35s ease,transform .45s cubic-bezier(.2,.6,.2,1)}
+.tile:hover .reveal{opacity:1;transform:none}
+.tile .reveal .rlabel{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--grad-cyan)}
+.tile .reveal ul{list-style:none;display:flex;flex-wrap:wrap;gap:9px;padding:0;margin:0}
+.tile .reveal li{border:1px solid rgba(255,255,255,.38);color:#fff;border-radius:30px;
+  padding:8px 15px;font-size:13.5px;font-weight:600}
+.tile .reveal .rmeta{color:#aeb9c7;font-size:.95rem;margin-top:2px}
 
-/* typographic tile — no photo needed, brand gradient + big type */
+/* --- description block, BELOW the image (Pentagram) --- */
+.tile .info{padding:24px 2px 0;max-width:78ch}
+.tile .info h3{font-size:clamp(1.4rem,2.2vw,1.9rem);color:var(--ink);letter-spacing:-.015em;margin-bottom:10px}
+.tile .info p{color:var(--muted);font-size:1.02rem;line-height:1.55}
+.tile .info .results{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.tile .info .domain{display:inline-block;margin-top:16px;
+  background:var(--alt);color:var(--muted);border:1px solid var(--line);
+  border-radius:8px;padding:6px 12px;font-size:12.5px;font-weight:600}
+
+/* tile backgrounds for cases without photography */
 .tile.type .media{background:var(--brand)}
-.tile.type .media::after{display:none}
-.tile.type .client{color:rgba(11,43,43,.7)}
-.tile.type .title{color:#0b2b2b;font-size:clamp(2rem,4vw,3.4rem);max-width:20ch}
-.tile.type .chip{background:rgba(11,43,43,.9);color:#fff}
-/* Customertimes tile — their brand navy */
-.tile.type.ct .media{background:linear-gradient(120deg,#041B4D,#0A2E6E)}
-.tile.type.ct .title{color:#fff}
-.tile.type.ct .client{color:rgba(255,255,255,.75)}
-.tile.type.ct .chip{background:rgba(255,255,255,.92);color:#041B4D}
-
-/* alternate dark typographic tile, for rhythm across the grid */
 .tile.type.ink .media{background:var(--navy)}
-.tile.type.ink .title{color:#fff}
-.tile.type.ink .client{color:rgba(255,255,255,.7)}
-.tile.type.ink .chip{background:rgba(255,255,255,.92);color:var(--ink)}
+.tile.type.ct .media{background:linear-gradient(120deg,#041B4D,#0A2E6E)}
 
 @media (max-width:860px){
+  .case-mosaic{gap:var(--s64)}
   .tile .media{aspect-ratio:4/3}
-  .tile .overlay{padding:26px}
 }
 @media (prefers-reduced-motion:reduce){
   .tile .media img,.tile:hover .media img{transition:none;transform:none}
+  .tile .reveal{transition:opacity .01s}
 }
 
-/* ---- Case study article page (Testlio Solidgate format) ---- */
-.case-hero{background:var(--navy);color:#fff;padding:var(--s64) 0 var(--s80)}
-.case-hero .eyebrow{color:var(--grad-cyan)}
-.case-hero h1{color:#fff;margin:16px 0 20px;max-width:22ch;font-size:clamp(2.2rem,4.4vw,3.2rem)}
-.case-hero .sub{color:#aeb9c7;max-width:60ch;font-size:1.15rem}
-.case-hero .by{display:flex;align-items:center;gap:12px;margin-top:26px;color:#8ea0b4;font-size:14px;font-weight:600}
-.case-hero .by img{height:26px;background:#fff;border-radius:6px;padding:5px 8px}
-.statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:var(--alt);border-radius:var(--r-lg);padding:34px;margin:calc(-1 * var(--s48)) auto var(--s48);position:relative;max-width:var(--maxw)}
-.statrow .s .n{font-size:2.1rem;font-weight:800;color:var(--ink);letter-spacing:-.02em}
-.statrow .s span{font-size:.9rem;color:var(--muted)}
-.article{max-width:760px;margin:0 auto}
-.article h2{margin:var(--s48) 0 var(--s16);font-size:1.9rem}
-.article h3{margin:var(--s32) 0 var(--s8);font-size:1.25rem}
-.article p{color:var(--ink);margin-bottom:var(--s16);font-size:1.05rem;line-height:1.65}
-.article ul{margin:0 0 var(--s16) 1.1rem;color:var(--ink)}
-.article li{margin-bottom:8px}
-.article .meta{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin:var(--s32) 0;color:var(--muted);font-size:.95rem}
-.article .meta b{color:var(--ink);display:block;margin-bottom:4px}
-.article blockquote{font-family:var(--font-serif);font-size:1.6rem;line-height:1.4;color:var(--ink);
-  border-left:3px solid var(--grad-cyan);padding-left:24px;margin:var(--s48) 0}
-.article blockquote cite{display:block;font-family:var(--font-body);font-style:normal;font-size:.95rem;color:var(--muted);margin-top:14px;font-weight:600}
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-.chip{border:1px solid var(--line);border-radius:30px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--ink)}
 /* real product shot inside a case article */
 .case-shot{margin:var(--s32) 0;border-radius:var(--r-lg);overflow:hidden;background:var(--navy)}
 .case-shot img{width:100%;display:block}
