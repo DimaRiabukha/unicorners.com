@@ -21,9 +21,9 @@
   --ink:#111820;                  /* neutral-90 */
   --muted:#5B6472;
   --line:#E7E9ED;
-  --navy:#0B1D33;                 /* dark value section */
-  --navy-2:#122a49;               /* card on navy */
-  --navy-line:rgba(255,255,255,.12);
+  --navy:#000000;                 /* dark sections — black */
+  --navy-2:#14181D;               /* card on black — dark gray */
+  --navy-line:rgba(255,255,255,.16);
   --alt:#F4F6F8;                  /* light gray section */
   --case-gray:#C7CCD3;            /* case-tile image background */
 
@@ -165,7 +165,7 @@ nav.main a:hover{color:var(--accent)}
 .split.rev .media{order:-1}
 .media{background:var(--alt);border:1px solid var(--line);border-radius:var(--r-lg);
   aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#9aa4b0;font-weight:600}
-.media.dark-media{background:linear-gradient(135deg,#0e2340,#0a1728);color:#5b7597;border:0}
+.media.dark-media{background:linear-gradient(135deg,#191E24,#0C0F13);color:#7d8896;border:0}
 
 /* ---- 6 feature icons ---- */
 .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 40px;margin-top:var(--s64)}
@@ -275,10 +275,10 @@ footer .logo{color:#fff;margin-bottom:14px}
 footer h5{color:#8ea0b4;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
 footer .fcol a{display:block;color:#cdd6e0;font-size:14px;margin-bottom:11px}
 footer .fcol a:hover{color:#fff}
-.subscribe{background:var(--brand);border-radius:var(--r);padding:24px;color:#06251a}
-.subscribe h5{color:#06251a}
+.subscribe{background:#C4C9D0;border-radius:var(--r);padding:24px;color:#0b0e12}
+.subscribe h5{color:#0b0e12}
 .subscribe input{width:100%;border:0;border-radius:30px;padding:13px 16px;margin:10px 0;font-family:inherit}
-.subscribe .btn{width:100%;justify-content:center;background:#06251a;color:#fff}
+.subscribe .btn{width:100%;justify-content:center;background:#0b0e12;color:#fff}
 .foot-bottom{border-top:1px solid var(--navy-line);margin-top:var(--s48);padding-top:var(--s24);
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#8ea0b4;font-size:13px}
 
