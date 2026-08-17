@@ -121,16 +121,43 @@ nav.main a:hover{color:var(--accent)}
 .dark .pill{background:transparent;color:#fff;border-color:var(--navy-line)}
 .dark .pill:hover{border-color:#fff}
 
-/* ---- Stats ---- */
-.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:var(--s48)}
-.stat{border-radius:var(--r-lg);padding:38px 34px;min-height:190px}
-.stat .num{font-size:clamp(2.6rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.02em}
-.stat h4{font-size:1.15rem;margin:2px 0 10px}
-.stat p{font-size:.95rem}
-.stat.blue{background:var(--tint-blue)} .stat.blue .num{color:var(--ink-blue)}
-.stat.mint{background:var(--tint-mint)} .stat.mint .num{color:var(--ink-mint)}
-.stat.sun{background:var(--tint-sun)}  .stat.sun .num{color:var(--ink-sun)}
-.stat.gray{background:var(--tint-gray)} .stat.gray .num{color:var(--ink-gray)}
+/* ---- Stats — Testlio "coverage and depth" palette ----------------
+   Asymmetric 2x2: row1 40/60, row2 60/40. Icons use CSS masks so
+   they inherit each card's text colour.                            */
+:root{
+  --stat-orange:#F97F32;      /* orange card, near-black text */
+  --stat-navy:#101A6E;        /* deep navy card, white text   */
+  --stat-lav:#E7EAFD;         /* pale lavender card           */
+  --stat-lav-ink:#2540F5;     /* vivid blue text on lavender  */
+  --stat-grey:#D3D8E0;        /* light grey card              */
+}
+.stats-grid{display:grid;grid-template-columns:2fr 3fr;gap:22px;margin-top:var(--s48)}
+.stat{border-radius:var(--r-lg);padding:34px;min-height:230px;
+  display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.stat .ic{width:30px;height:30px;margin-bottom:auto;display:block;
+  transition:transform .35s cubic-bezier(.2,.6,.2,1)}
+.stat:hover .ic{transform:translateY(-3px) scale(1.08)}
+.stat .num{font-size:clamp(2.6rem,4.6vw,3.5rem);font-weight:800;letter-spacing:-.03em;
+  line-height:1;margin-top:26px}
+.stat h4{font-size:1.05rem;font-weight:700;margin:12px 0 0}
+.stat p{font-size:.92rem;margin-top:8px;opacity:.72;color:inherit}
+
+/* the four colourways */
+.stat.c-orange{background:var(--stat-orange);color:#111820}
+.stat.c-navy  {background:var(--stat-navy);color:#fff}
+.stat.c-lav   {background:var(--stat-lav);color:var(--stat-lav-ink)}
+.stat.c-grey  {background:var(--stat-grey);color:#111820}
+/* row 2 mirrors the widths of row 1 */
+.stat.wide{grid-column:span 1}
+.stats-grid .r2a{grid-column:1 / 2}
+.stats-grid.flip{grid-template-columns:3fr 2fr}
+
+@media (max-width:860px){
+  .stats-grid,.stats-grid.flip{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .stat .ic,.stat:hover .ic{transition:none;transform:none}
+}
 
 /* ---- Split media sections ---- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
