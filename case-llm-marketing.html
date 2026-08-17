@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An LLM that writes in the company’s own voice — Case study — Unicorners</title>
+<link rel="stylesheet" href="styles.css?v=19">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-unicorners-long.svg" alt="Unicorners"></a>
+    <nav class="main">
+      <a href="community.html">Community</a><a href="cases.html">Case studies</a>
+      <a href="community.html#partners">For partners</a><a href="community.html#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" href="#partner">Become a partner</a>
+      <a class="btn btn-primary" href="#connect">Connect</a>
+    </div>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="cs-wrap">
+    <div class="meta-top">
+      <a href="cases.html">← All case studies</a>
+      <span class="dot">·</span><span>GenAI / LLM · Marketing</span>
+      <span class="dot">·</span><span>Delivered by Amazinum</span>
+    </div>
+    <h1>An LLM that writes in the company’s own voice.</h1>
+  </div>
+  <figure class="cs-figure bleed">
+    <img src="assets/covers/cs-llm.png" alt="An LLM that writes in the company’s own voice">
+  </figure>
+</section>
+
+<section class="cs-credits">
+  <div class="cs-wrap">
+    <div class="grid">
+      <div>
+        <h2>Credits</h2>
+        <dl>
+          <dt>Client</dt><dd>Product company (NDA)</dd>
+          <dt>Delivered by</dt><dd>Amazinum, a Unicorners member</dd>
+          <dt>Scope</dt><dd>Generative content platform</dd>
+          <dt>Models</dt><dd>PaLM 2, fine-tuned</dd>
+          <dt>Stack</dt><dd>LangChain · Vertex AI · Cloud Build · Cloud Functions</dd>
+          <dt>Disciplines</dt><dd>Data science · Prompt engineering · MLOps</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Impact</h2>
+        <div class="cs-impact">
+          <div class="i"><b>5</b><span>Generation tasks automated</span></div>
+          <div class="i"><b>50+</b><span>Acronyms decoded from glossary</span></div>
+          <div class="i"><b>Multi</b><span>Languages, formatting preserved</span></div>
+          <div class="i"><b>1</b><span>Voice across every channel</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="cs-figure bleed">
+  <img src="assets/photos/w-llm.jpg" alt="An LLM that writes in the company’s own voice — detail">
+</figure>
+
+<section class="cs-body">
+  <div class="cs-wrap cs-measure">
+    <p class="lead-para">Every company has a house style. Almost none of them can scale it.</p>
+    <p>The client's marketing and internal comms shared a problem: producing consistent material — posts, newsletters, replies — meant a small group of people writing everything, because only they knew how the company was supposed to sound.</p>
+
+    <p>Amazinum built a generative system on Google's PaLM 2, connected and fine-tuned through the LangChain framework, then hardened into a production service with Cloud Build, Cloud Functions and Vertex AI.</p>
+
+    <h2>Teaching a model to sound like a specific company</h2>
+    <p>Sounding on-brand is not a prompt trick. The team prepared large volumes of the client's own newsletters, replies and social copy, then fine-tuned on a Vertex AI pretraining pipeline until the model reproduced the company's register rather than a generic corporate voice.</p>
+
+    <p>Around that core sit narrower jobs: acronyms swapped for their full form from a custom company glossary so newcomers can read internal material, social posts generated to a fixed template, and documents translated across formats while keeping their original layout and styling intact.</p>
+
+  </div>
+</section>
+
+<section class="cs-aug">
+  <div class="cs-wrap">
+    <h2>What the community built</h2>
+    <div class="cs-aug-grid">
+      <div class="cs-aug-item"><span class="n">01</span>
+        <div><h3>Fine-tuned house voice</h3>
+        <p>Trained on the company's own writing via a Vertex AI pipeline, not a generic assistant.</p></div></div>
+      <div class="cs-aug-item"><span class="n">02</span>
+        <div><h3>Glossary-aware rewriting</h3>
+        <p>Few-shot prompting with in-context learning decodes internal acronyms for new readers.</p></div></div>
+      <div class="cs-aug-item"><span class="n">03</span>
+        <div><h3>Templated social generation</h3>
+        <p>Posts for Instagram, Facebook and LinkedIn run through LangChain against a post template.</p></div></div>
+      <div class="cs-aug-item"><span class="n">04</span>
+        <div><h3>Format-preserving translation</h3>
+        <p>Documents move between languages without losing their original formatting.</p></div></div>
+      <div class="cs-aug-item"><span class="n">05</span>
+        <div><h3>Conversational access</h3>
+        <p>LangChain plus Vertex AI gives end users a chat interface over the whole system.</p></div></div>
+      <div class="cs-aug-item"><span class="n">06</span>
+        <div><h3>Production deployment</h3>
+        <p>Cloud Build and Cloud Functions turn the models into a maintained service.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band" id="connect">
+  <h2>Have a problem like this one?</h2>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="mailto:connect@unicorners.com">Connect</a>
+    <a class="btn btn-secondary" href="community.html#partners" id="partner">Become a partner</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><img src="assets/logo-unicorners-long-white.svg" alt="Unicorners"></div>
+        <p style="color:#8ea0b4;max-width:34ch;margin-top:14px">Community of niche AI &amp; deep-tech companies from Ukraine. Part of the IT Ukraine Association — Ambassador in France.</p>
+      </div>
+      <div class="fcol"><h5>Explore</h5><a href="community.html">Community</a><a href="cases.html">Case studies</a><a href="community.html#partners">For partners</a><a href="community.html#about">About</a></div>
+      <div class="fcol"><h5>Company</h5><a href="#">Members</a><a href="#">Careers</a><a href="mailto:connect@unicorners.com">Contact</a><a href="#">Privacy policy</a></div>
+      <div class="subscribe"><h5>Stay in the loop</h5><p style="color:#0b0e12;font-size:14px">New cases and community news.</p><input type="email" placeholder="Enter e-mail"><button class="btn">Subscribe</button></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Unicorners Inc. Each member company is a separate and independent legal entity.</span><span>connect@unicorners.com · LinkedIn</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var on=false;
+  function upd(){
+    var s=(window.scrollY||document.documentElement.scrollTop)>40;
+    if(s!==on){ on=s; h.classList.toggle('shrunk',s); }
+  }
+  upd();
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+})();
+</script>
+</body>
+</html>

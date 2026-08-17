@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM order-taking that replaced bespoke ML models — Case study — Unicorners</title>
+<link rel="stylesheet" href="styles.css?v=19">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-unicorners-long.svg" alt="Unicorners"></a>
+    <nav class="main">
+      <a href="community.html">Community</a><a href="cases.html">Case studies</a>
+      <a href="community.html#partners">For partners</a><a href="community.html#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" href="#partner">Become a partner</a>
+      <a class="btn btn-primary" href="#connect">Connect</a>
+    </div>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="cs-wrap">
+    <div class="meta-top">
+      <a href="cases.html">← All case studies</a>
+      <span class="dot">·</span><span>Voice AI / LLM · Retail Ops</span>
+      <span class="dot">·</span><span>Delivered by Unidata Lab</span>
+    </div>
+    <h1>Replacing bespoke ML with one language model that listens.</h1>
+  </div>
+  <figure class="cs-figure bleed">
+    <img src="assets/covers/cs-qsr.png" alt="LLM order-taking that replaced bespoke ML models">
+  </figure>
+</section>
+
+<section class="cs-credits">
+  <div class="cs-wrap">
+    <div class="grid">
+      <div>
+        <h2>Credits</h2>
+        <dl>
+          <dt>Client</dt><dd>QSR technology provider</dd>
+          <dt>Delivered by</dt><dd>Unidata Lab, a Unicorners member</dd>
+          <dt>Scope</dt><dd>Order understanding engine</dd>
+          <dt>Model</dt><dd>GPT-4o-mini, fine-tuned</dd>
+          <dt>Hosting</dt><dd>Azure</dd>
+          <dt>Disciplines</dt><dd>NLP · Prompt engineering · Evaluation</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Impact</h2>
+        <div class="cs-impact">
+          <div class="i"><b>1</b><span>Model replaces per-brand transformers</span></div>
+          <div class="i"><b>3</b><span>Entity types extracted per order</span></div>
+          <div class="i"><b>Live</b><span>Confidence scoring on every order</span></div>
+          <div class="i"><b>Human</b><span>Fallback when certainty is low</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="cs-figure bleed">
+  <img src="assets/photos/w-qsr.jpg" alt="LLM order-taking that replaced bespoke ML models — detail">
+</figure>
+
+<section class="cs-body">
+  <div class="cs-wrap cs-measure">
+    <p class="lead-para">Their old system worked. It just had to be rebuilt for every new brand.</p>
+    <p>The client serves quick service restaurants, where order-taking has to be fast, accurate, and identical in quality across very different menus. Their existing custom-trained transformers delivered that — but each new brand or menu structure meant another round of adaptation work.</p>
+
+    <p>They asked whether a large language model could replace that per-brand machinery. Unidata Lab built the answer: a fine-tuned GPT-4o-mini hosted on Azure that reads real customer orders and extracts menu items, modifiers and quantities.</p>
+
+    <h2>Knowing when not to trust the model</h2>
+    <p>The interesting engineering is not the extraction — it is the doubt. The team implemented several methods for scoring confidence, both for the recognised order state and for each extracted entity.</p>
+
+    <p>When confidence drops below threshold, the system triggers a fallback to human staff instead of committing a guess to someone's order. A prompt-engineering framework sits around the model to keep interpretation stable across the wide range of ways customers actually speak.</p>
+
+  </div>
+</section>
+
+<section class="cs-aug">
+  <div class="cs-wrap">
+    <h2>What the community built</h2>
+    <div class="cs-aug-grid">
+      <div class="cs-aug-item"><span class="n">01</span>
+        <div><h3>One model, many menus</h3>
+        <p>A single fine-tuned model replaces brand-specific transformers and their adaptation work.</p></div></div>
+      <div class="cs-aug-item"><span class="n">02</span>
+        <div><h3>Entity extraction</h3>
+        <p>Menu items, modifiers and quantities pulled from natural, unstructured speech.</p></div></div>
+      <div class="cs-aug-item"><span class="n">03</span>
+        <div><h3>Confidence scoring</h3>
+        <p>Multiple methods score both order state and each extracted entity.</p></div></div>
+      <div class="cs-aug-item"><span class="n">04</span>
+        <div><h3>Human fallback</h3>
+        <p>Low-confidence orders route to staff rather than being guessed.</p></div></div>
+      <div class="cs-aug-item"><span class="n">05</span>
+        <div><h3>Prompt framework</h3>
+        <p>A structured framework keeps interpretation consistent across input patterns.</p></div></div>
+      <div class="cs-aug-item"><span class="n">06</span>
+        <div><h3>Azure hosting</h3>
+        <p>Deployed on Azure to fit the client's existing infrastructure.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band" id="connect">
+  <h2>Have a problem like this one?</h2>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="mailto:connect@unicorners.com">Connect</a>
+    <a class="btn btn-secondary" href="community.html#partners" id="partner">Become a partner</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><img src="assets/logo-unicorners-long-white.svg" alt="Unicorners"></div>
+        <p style="color:#8ea0b4;max-width:34ch;margin-top:14px">Community of niche AI &amp; deep-tech companies from Ukraine. Part of the IT Ukraine Association — Ambassador in France.</p>
+      </div>
+      <div class="fcol"><h5>Explore</h5><a href="community.html">Community</a><a href="cases.html">Case studies</a><a href="community.html#partners">For partners</a><a href="community.html#about">About</a></div>
+      <div class="fcol"><h5>Company</h5><a href="#">Members</a><a href="#">Careers</a><a href="mailto:connect@unicorners.com">Contact</a><a href="#">Privacy policy</a></div>
+      <div class="subscribe"><h5>Stay in the loop</h5><p style="color:#0b0e12;font-size:14px">New cases and community news.</p><input type="email" placeholder="Enter e-mail"><button class="btn">Subscribe</button></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Unicorners Inc. Each member company is a separate and independent legal entity.</span><span>connect@unicorners.com · LinkedIn</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var on=false;
+  function upd(){
+    var s=(window.scrollY||document.documentElement.scrollTop)>40;
+    if(s!==on){ on=s; h.classList.toggle('shrunk',s); }
+  }
+  upd();
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+})();
+</script>
+</body>
+</html>

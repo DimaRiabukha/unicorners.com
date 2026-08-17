@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The community — Unicorners</title>
-<link rel="stylesheet" href="styles.css?v=18">
+<link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
 
@@ -157,5 +157,17 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var on=false;
+  function upd(){
+    var s=(window.scrollY||document.documentElement.scrollTop)>40;
+    if(s!==on){ on=s; h.classList.toggle('shrunk',s); }
+  }
+  upd();
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+})();
+</script>
 </body>
 </html>

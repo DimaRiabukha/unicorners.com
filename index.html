@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unicorners — Community of Ukrainian AI & deep-tech companies</title>
-<link rel="stylesheet" href="styles.css?v=18">
+<link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
 
@@ -93,9 +93,11 @@
        Replace client / title / caption text per case. -->
   <div class="case-mosaic">
 
-    <a class="tile" href="case-detail.html">
+    <a class="tile featured" href="case-detail.html">
       <div class="media">
         <img src="assets/case-fitness-app.png" alt="AI fitness platform on mobile">
+      
+        <div class="reveal"><span class="rt">AI-powered fitness platform with Gemini</span><span class="rc">View case study →</span></div>
       </div>
       <div class="info">
         <h3>AI-powered fitness platform with Gemini</h3>
@@ -104,7 +106,7 @@
       </div>
     </a>
 
-    <a class="tile" href="#">
+    <a class="tile" href="case-llm-marketing.html">
       <div class="media">
         <img src="assets/covers/cs-llm.png" alt="LLM marketing asset generation">
       </div>
@@ -115,7 +117,7 @@
       </div>
     </a>
 
-    <a class="tile" href="#">
+    <a class="tile" href="case-ecommerce.html">
       <div class="media">
         <img src="assets/covers/cs-ecom.png" alt="E-commerce monitoring intelligence">
       </div>
@@ -126,7 +128,7 @@
       </div>
     </a>
 
-    <a class="tile" href="#">
+    <a class="tile" href="case-doc-assistant.html">
       <div class="media">
         <img src="assets/covers/cs-docs.png" alt="Secure document intelligence assistant">
       </div>
@@ -137,7 +139,7 @@
       </div>
     </a>
 
-    <a class="tile" href="#">
+    <a class="tile" href="case-qsr-ordering.html">
       <div class="media">
         <img src="assets/covers/cs-qsr.png" alt="LLM order-taking for restaurants">
       </div>
@@ -322,5 +324,17 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var on=false;
+  function upd(){
+    var s=(window.scrollY||document.documentElement.scrollTop)>40;
+    if(s!==on){ on=s; h.classList.toggle('shrunk',s); }
+  }
+  upd();
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+})();
+</script>
 </body>
 </html>
