@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-commerce monitoring and pricing intelligence — Case study — Unicorners</title>
+<title>AI design tool for vehicle wraps — Wrapmate — Case study — Unicorners</title>
 <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
@@ -27,13 +27,14 @@
   <div class="cs-wrap">
     <div class="meta-top">
       <a href="cases.html">← All case studies</a>
-      <span class="dot">·</span><span>E-commerce · Data &amp; ML</span>
-      <span class="dot">·</span><span>Delivered by Amazinum</span>
+      <span class="dot">·</span><span>Generative Design · Commerce</span>
+      <span class="dot">·</span><span>Concept for Wrapmate</span>
     </div>
-    <h1>Turning marketplace noise into pricing decisions.</h1>
+    <h1>Designing a vehicle wrap before anyone touches vinyl.</h1>
   </div>
   <figure class="cs-figure bleed">
-    <img src="assets/covers/cs-ecom.png" alt="E-commerce monitoring and pricing intelligence">
+    <img src="assets/covers/cs-wrap.jpg" alt="Vehicle side profile — the wrap canvas">
+    <figcaption><span style="opacity:.7">Photo: Unsplash</span></figcaption>
   </figure>
 </section>
 
@@ -43,21 +44,21 @@
       <div>
         <h2>Credits</h2>
         <dl>
-          <dt>Client</dt><dd>E-commerce intelligence platform</dd>
-          <dt>Delivered by</dt><dd>Amazinum, a Unicorners member</dd>
-          <dt>Scope</dt><dd>ML platform &amp; analytics</dd>
-          <dt>Pipelines</dt><dd>Kubeflow model evaluation</dd>
-          <dt>Stack</dt><dd>Google Cloud · BigQuery · BigTable</dd>
-          <dt>Disciplines</dt><dd>Data science · Data engineering · MLOps</dd>
+          <dt>Client</dt><dd>Wrapmate — vehicle wrap marketplace</dd>
+          <dt>Status</dt><dd>Concept case — scope proposal, not delivered work</dd>
+          <dt>Proposed by</dt><dd>The Unicorners community</dd>
+          <dt>Scope</dt><dd>Generative wrap design &amp; print-ready output</dd>
+          <dt>Constraints</dt><dd>3M vinyl specification · per-vehicle templates · installer network</dd>
+          <dt>Disciplines</dt><dd>Generative AI · 3D/graphics · Design systems · Production engineering</dd>
         </dl>
       </div>
       <div>
-        <h2>Impact</h2>
+        <h2>Context</h2>
         <div class="cs-impact">
-          <div class="i"><b>4</b><span>Decision areas covered</span></div>
-          <div class="i"><b>Multi</b><span>Brands and categories tracked</span></div>
-          <div class="i"><b>Auto</b><span>Model evaluation in Kubeflow</span></div>
-          <div class="i"><b>Live</b><span>Competitor price monitoring</span></div>
+          <div class="i"><b>2,000+</b><span>Certified installers the output has to fit</span></div>
+          <div class="i"><b>3M</b><span>Vinyl specification the design must print to</span></div>
+          <div class="i"><b>5–7 yrs</b><span>Expected wrap lifespan on the vehicle</span></div>
+          <div class="i"><b>1</b><span>Design system, applied across a whole fleet</span></div>
         </div>
       </div>
     </div>
@@ -65,46 +66,64 @@
 </section>
 
 <figure class="cs-figure bleed">
-  <img src="assets/photos/w-ecom.jpg" alt="E-commerce monitoring and pricing intelligence — detail">
+  <img src="assets/photos/w-wrap.jpg" alt="Vehicle profile">
+  <figcaption><span style="opacity:.7">Photo: Unsplash</span></figcaption>
 </figure>
 
 <section class="cs-body">
   <div class="cs-wrap cs-measure">
-    <p class="lead-para">Sellers do not lack data. They lack a reason to act on it.</p>
-    <p>The client operates a platform where retailers and brands watch their own performance and their competitors' at once. The raw material — prices, availability, sales curves across categories — was already there. What was missing was the layer that turns it into a decision.</p>
+    <p class="lead-para">Wrapmate solved printing and installation. Design is the part that still moves at
+      human speed.</p>
 
-    <p>Amazinum's data scientists built and evaluated competing model versions autonomously, reworking the evaluation pipeline in Kubeflow so improvements could be measured rather than argued about.</p>
+    <p>The company already does the hard logistics well: premium 3M vinyl, a satisfaction guarantee, and the
+      largest network of certified installers in the country — more than two thousand of them — so a customer
+      approves a design and it gets fitted locally. The bottleneck sits earlier, at the moment a business
+      owner is trying to picture what their van could look like.</p>
 
-    <h2>Four questions the platform now answers</h2>
-    <p>The work concentrated on the things a seller acts on weekly: how competitor and retailer prices are moving, which products are drifting out of stock, where advertising spend will actually return, and how the supply chain should respond.</p>
+    <p>A vehicle wrap is not a flat graphic. It is a surface that bends around door seams, handles, mirrors and
+      compound curves, and it is different for every make, model and year. A layout that looks balanced in a
+      design file can put a logo across a door gap or lose half a phone number around a wheel arch. That is
+      why design has stayed manual, per vehicle, per customer.</p>
 
-    <p>Because the platform runs on GCP, the team worked closely with BigQuery and BigTable to keep queries over large historical windows fast enough for interactive analysis rather than overnight reporting.</p>
+    <h2>What an AI design tool would actually have to do</h2>
 
+    <p>Generating a nice-looking image is the easy half. The tool has to generate a design that is
+      <em>manufacturable</em>: aligned to the real template for that vehicle, aware of where the panels split,
+      and exportable as print-ready files an installer can work from without redrawing anything.</p>
+
+    <p>The proposed system starts from what a business already has — logo, colours, typeface, the message it
+      needs on the side of a vehicle — and produces wrap concepts laid onto the exact template for the chosen
+      make and model. The customer sees it on their own vehicle in 3D, iterates in plain language, and
+      approves. What leaves the tool is not a picture but a production file.</p>
+
+    <p>For commercial programmes the same engine solves a second problem: one identity applied consistently
+      across a mixed fleet, so a sprinter van, a pickup and a compact car read as the same brand rather than
+      three separate attempts at it.</p>
   </div>
 </section>
 
 <section class="cs-aug">
   <div class="cs-wrap">
-    <h2>What the community built</h2>
+    <h2>What the community would build</h2>
     <div class="cs-aug-grid">
       <div class="cs-aug-item"><span class="n">01</span>
-        <div><h3>Competitor price dynamics</h3>
-        <p>Track how competitors and retailers move on price, per product and per category.</p></div></div>
+        <div><h3>Brand-to-wrap generation</h3>
+        <p>Concepts generated from a business's existing logo, palette, typography and message — not from a blank prompt.</p></div></div>
       <div class="cs-aug-item"><span class="n">02</span>
-        <div><h3>Availability monitoring</h3>
-        <p>In-stock and out-of-stock analysis that surfaces availability problems early.</p></div></div>
+        <div><h3>Vehicle-accurate templates</h3>
+        <p>Every design laid onto the real cutting template for that make, model and year.</p></div></div>
       <div class="cs-aug-item"><span class="n">03</span>
-        <div><h3>Demand prediction</h3>
-        <p>Forecasts that let advertising spend follow expected demand instead of trailing it.</p></div></div>
+        <div><h3>Seam and hardware awareness</h3>
+        <p>Layout rules that keep logos and contact details clear of door gaps, handles, mirrors and wheel arches.</p></div></div>
       <div class="cs-aug-item"><span class="n">04</span>
-        <div><h3>Supply chain signals</h3>
-        <p>Sales performance across brands and categories feeding replenishment decisions.</p></div></div>
+        <div><h3>Live 3D preview</h3>
+        <p>The customer sees the wrap on their own vehicle and iterates conversationally before approving.</p></div></div>
       <div class="cs-aug-item"><span class="n">05</span>
-        <div><h3>Autonomous model evaluation</h3>
-        <p>A reworked Kubeflow pipeline compares model versions without manual babysitting.</p></div></div>
+        <div><h3>Fleet consistency</h3>
+        <p>One identity resolved across different body shapes so a mixed fleet reads as a single brand.</p></div></div>
       <div class="cs-aug-item"><span class="n">06</span>
-        <div><h3>Cloud-scale storage</h3>
-        <p>BigQuery and BigTable keep long histories queryable at interactive speed.</p></div></div>
+        <div><h3>Print-ready output</h3>
+        <p>Panel-split files at the correct scale and bleed for 3M vinyl, ready for the installer network.</p></div></div>
     </div>
   </div>
 </section>
