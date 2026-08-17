@@ -105,8 +105,9 @@ nav.main a:hover{color:var(--accent)}
 /* ---- Member logo strip ---- */
 .logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
 .logos .cap{text-align:center;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9aa4b0;margin-bottom:18px}
-.logos .row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap}
+.logos .row{display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap}
 .logos .row img{height:30px;width:auto;opacity:.85}
+.logos .row img.wide-logo{height:24px}
 .logos .lg{font-weight:800;font-size:19px;color:#b6bec9;letter-spacing:-.02em}  /* placeholder members */
 
 /* ---- Dark value section ---- */
