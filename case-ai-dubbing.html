@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI dubbing: customised text-to-speech with tempo correction — Case study — Unicorners</title>
+<link rel="stylesheet" href="styles.css?v=19">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-unicorners-long.svg" alt="Unicorners"></a>
+    <nav class="main">
+      <a href="community.html">Community</a><a href="cases.html">Case studies</a>
+      <a href="community.html#partners">For partners</a><a href="community.html#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-secondary" href="#partner">Become a partner</a>
+      <a class="btn btn-primary" href="#connect">Connect</a>
+    </div>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="cs-hero">
+  <div class="cs-wrap">
+    <div class="meta-top">
+      <a href="cases.html">← All case studies</a>
+      <span class="dot">·</span><span>Speech AI · Media Localisation</span>
+      <span class="dot">·</span><span>Delivered by Unidata Lab</span>
+    </div>
+    <h1>Making translated speech fit the original timing.</h1>
+  </div>
+  <figure class="cs-figure bleed">
+    <img src="assets/covers/cs-dubbing.jpg" alt="Studio microphone">
+    <figcaption><span style="opacity:.7">Photo: Unsplash</span></figcaption>
+  </figure>
+</section>
+
+<section class="cs-credits">
+  <div class="cs-wrap">
+    <div class="grid">
+      <div>
+        <h2>Credits</h2>
+        <dl>
+          <dt>Client</dt><dd>Media localisation platform</dd>
+          <dt>Delivered by</dt><dd>Unidata Lab, a Unicorners member</dd>
+          <dt>Scope</dt><dd>Speech tempo prediction &amp; correction service</dd>
+          <dt>Modules</dt><dd>Text-to-phoneme converter · Duration predictor · Tempo corrector</dd>
+          <dt>Delivery</dt><dd>Standalone service, API, research results, technical documentation</dd>
+          <dt>Disciplines</dt><dd>Speech AI · Phonetics research · API engineering</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Impact</h2>
+        <div class="cs-impact">
+          <div class="i"><b>3</b><span>Pipeline modules delivered as one service</span></div>
+          <div class="i"><b>Auto</b><span>Ship / rephrase verdict per segment</span></div>
+          <div class="i"><b>Multi</b><span>Languages supported via phoneme mapping</span></div>
+          <div class="i"><b>API</b><span>Drop-in integration with the client’s pipeline</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="cs-figure bleed">
+  <img src="assets/photos/w-dubbing.jpg" alt="Recording studio">
+  <figcaption><span style="opacity:.7">Photo: Unsplash</span></figcaption>
+</figure>
+
+<section class="cs-body">
+  <div class="cs-wrap cs-measure">
+    <p class="lead-para">A translated line can be perfectly accurate and still be unusable — because it takes
+      four seconds to say what the original said in two.</p>
+
+    <p>Dubbing lives or dies on timing. When translated speech runs longer or shorter than the segment it has
+      to replace, the result drifts out of sync with the picture, and someone has to rewrite the line by hand.
+      The client needed to know that <em>before</em> recording, not after.</p>
+
+    <p>Unidata Lab integrated a specialised component into the client’s existing pipeline: a service that
+      predicts the tempo of translated speech and evaluates the duration difference between two corresponding
+      segments — then says whether the translation can be safely dubbed as written.</p>
+
+    <h2>Three modules, one verdict</h2>
+
+    <p>The service is built from a text-to-phoneme converter, a duration predictor and a tempo corrector.
+      Original and translated text are each converted into a sequence of phonemes for their own language;
+      an AI model estimates speech duration from those phonemes; and the tempo correction logic adjusts the
+      translated duration to align with the original recording.</p>
+
+    <p>The relative difference between the two is then calculated and analysed to produce a recommendation:
+      use it, or send it back for manual rephrasing. The API takes the texts, the original duration and an
+      acceptable difference, and returns a decision — which is what makes it usable as an automated gate
+      rather than a report someone has to interpret.</p>
+
+    <h2>The details that decide whether it works</h2>
+
+    <p>Two problems turned out to matter more than the model itself. The first was punctuation: every symbol
+      carries a duration of silence that changes the length of a spoken phrase and therefore its tempo. The
+      team researched phrases of varying length across languages, punctuation symbols, and the position of
+      those symbols within a sentence.</p>
+
+    <p>The second was numbers. Applying text-to-speech directly to digits produced inconsistent results,
+      because the same numeric format can be voiced several different ways. The fix was to convert numeric
+      data into its written form before synthesis — <em>18.08.1996</em> becomes <em>August eighteen, nineteen
+      ninety-six</em> — so the duration prediction matches what a voice will actually say.</p>
+  </div>
+</section>
+
+<section class="cs-aug">
+  <div class="cs-wrap">
+    <h2>What the community built</h2>
+    <div class="cs-aug-grid">
+      <div class="cs-aug-item"><span class="n">01</span>
+        <div><h3>Text-to-phoneme conversion</h3>
+        <p>Original and translated text converted into per-language phoneme sequences as the basis for timing.</p></div></div>
+      <div class="cs-aug-item"><span class="n">02</span>
+        <div><h3>Duration prediction model</h3>
+        <p>An AI model that estimates spoken duration from phonemes rather than from character counts.</p></div></div>
+      <div class="cs-aug-item"><span class="n">03</span>
+        <div><h3>Tempo correction</h3>
+        <p>Logic that aligns the translated segment’s tempo with the original recording.</p></div></div>
+      <div class="cs-aug-item"><span class="n">04</span>
+        <div><h3>Automated dubbing verdict</h3>
+        <p>The relative duration difference is analysed to recommend use as-is or manual rephrasing.</p></div></div>
+      <div class="cs-aug-item"><span class="n">05</span>
+        <div><h3>Punctuation timing research</h3>
+        <p>Silence durations studied across languages, symbols and sentence positions, then folded into prediction.</p></div></div>
+      <div class="cs-aug-item"><span class="n">06</span>
+        <div><h3>Number normalisation</h3>
+        <p>Numeric formats converted to written form before synthesis so predicted duration matches spoken output.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band" id="connect">
+  <h2>Have a problem like this one?</h2>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="mailto:connect@unicorners.com">Connect</a>
+    <a class="btn btn-secondary" href="community.html#partners" id="partner">Become a partner</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><img src="assets/logo-unicorners-long-white.svg" alt="Unicorners"></div>
+        <p style="color:#8ea0b4;max-width:34ch;margin-top:14px">Community of niche AI &amp; deep-tech companies from Ukraine. Part of the IT Ukraine Association — Ambassador in France.</p>
+      </div>
+      <div class="fcol"><h5>Explore</h5><a href="community.html">Community</a><a href="cases.html">Case studies</a><a href="community.html#partners">For partners</a><a href="community.html#about">About</a></div>
+      <div class="fcol"><h5>Company</h5><a href="#">Members</a><a href="#">Careers</a><a href="mailto:connect@unicorners.com">Contact</a><a href="#">Privacy policy</a></div>
+      <div class="subscribe"><h5>Stay in the loop</h5><p style="color:#0b0e12;font-size:14px">New cases and community news.</p><input type="email" placeholder="Enter e-mail"><button class="btn">Subscribe</button></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Unicorners Inc. Each member company is a separate and independent legal entity.</span><span>connect@unicorners.com · LinkedIn</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var on=false;
+  function upd(){
+    var s=(window.scrollY||document.documentElement.scrollTop)>40;
+    if(s!==on){ on=s; h.classList.toggle('shrunk',s); }
+  }
+  upd();
+  window.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
+})();
+</script>
+</body>
+</html>
