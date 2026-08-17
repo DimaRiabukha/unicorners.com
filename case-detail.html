@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-powered fitness platform with Gemini — Case study — Unicorners</title>
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -23,108 +23,143 @@
   </div>
 </header>
 
-<!-- Case hero -->
-<div class="case-hero">
-  <div class="wrap">
-    <a href="cases.html" style="color:#aeb9c7;font-weight:600;font-size:14px">← All case studies</a>
-    <div class="kicker">Health &amp; Wellness · AI/ML</div>
-    <h1>Next-gen AI fitness companion with elite-level health tracking</h1>
-    <p class="sub">A community member built an intelligent fitness app that analyses nine health metrics simultaneously
-      to deliver personalised training, nutrition and recovery — powered by a multi-agent AI coaching engine on Google Gemini.</p>
-    <div class="by">Delivered by <img src="assets/logo-qarea.svg" alt="QArea"> · a Unicorners member company</div>
-  </div>
-</div>
-
-<!-- Stat row (overlaps hero) -->
-<div class="wrap">
-  <div class="statrow">
-    <div class="s"><div class="n">9</div><span>Health metrics analysed at once</span></div>
-    <div class="s"><div class="n">45%</div><span>Faster time-to-market</span></div>
-    <div class="s"><div class="n">30%</div><span>Lower infrastructure cost</span></div>
-    <div class="s"><div class="n">4.8/5</div><span>Average app-store rating</span></div>
-  </div>
-</div>
-
-<!-- Article -->
-<section style="padding-top:var(--s32)">
-  <div class="wrap article">
-
-    <h2>Company overview</h2>
-    <p>Vitalio — founded by an EU-based entrepreneur and fitness enthusiast — came to the community with an ambition:
-      build the unified wellness product the fragmented fitness market was missing. Not another workout tracker,
-      but a system that combines training, nutrition, sleep and recovery data and uses AI to adapt programmes in
-      real time, autonomously, based on how a person actually performs and lives.</p>
-
-    <div class="meta">
-      <div><b>Client</b>Vitalio — EU wellness startup</div>
-      <div><b>Duration</b>9+ months (ongoing, pre-launch)</div>
-      <div><b>Peak team</b>12 specialists (scaled from 4)</div>
+<!-- ============ HERO — one statement, then full-bleed image ============ -->
+<section class="cs-hero">
+  <div class="cs-wrap">
+    <div class="meta-top">
+      <a href="cases.html">← All case studies</a>
+      <span class="dot">·</span><span>Health &amp; Wellness · AI/ML</span>
+      <span class="dot">·</span><span>Delivered by QArea</span>
     </div>
+    <h1>Turning a fitness tracker into an AI coach.</h1>
+  </div>
+  <figure class="cs-figure bleed">
+    <img src="assets/case-fitness-app.png" alt="The AI fitness platform running on mobile">
+    <figcaption>The delivered product — <a href="https://demo1.fitness-apps.qarea.org/member/index.html" target="_blank" rel="noopener">view the live demo →</a></figcaption>
+  </figure>
+</section>
 
-    <h2>The challenge</h2>
-    <p>Existing fitness solutions operate in silos — no single product connects every wellness dimension, and none use
-      AI to autonomously modify programmes based on real user performance and lifestyle factors. Delivering that meant
-      combining deep AI/ML engineering, mobile product craft, cloud infrastructure and health-domain compliance in one team,
-      then growing that team mid-flight without breaking delivery velocity.</p>
+<!-- ============ GALLERY ============ -->
+<div class="cs-wrap">
+  <div class="cs-gallery">
+    <img src="assets/ph/cs-shot-a.png" alt="Onboarding and goal setting">
+    <img src="assets/ph/cs-shot-b.png" alt="Daily plan and adaptive coaching">
+    <img src="assets/ph/cs-shot-c.png" alt="Nutrition logging in natural language">
+  </div>
+</div>
 
-    <figure class="case-shot">
-      <img src="assets/case-fitness-app.png" alt="The AI fitness platform running on mobile">
-      <figcaption>The delivered product — <a href="https://demo1.fitness-apps.qarea.org/member/index.html" target="_blank" rel="noopener">view the live demo →</a></figcaption>
-    </figure>
+<!-- ============ BODY ============ -->
+<section class="cs-body">
+  <div class="cs-wrap cs-measure">
+    <p class="lead-para">The fitness market is full of trackers. Almost none of them think.
+      Workouts live in one app, meals in another, sleep in a third — and nothing changes when
+      your week does.</p>
 
-    <h2>How the community solved it</h2>
+    <p>Vitalio came to the community with a harder ambition: one system that reads every dimension of
+      a person's health and rewrites their plan as life happens. Not a logbook, but a coach — one that
+      notices a missed session, a bad night's sleep or a heavy meal, and adjusts tomorrow accordingly.</p>
 
-    <h3>Multi-agent AI architecture</h3>
-    <p>A layered prompt system with a master-coach persona, feature-specific prompts, and a secondary LLM that validates
-      every output before it reaches the user — keeping coaching advice safe and on-brand.</p>
+    <p>Delivering it meant combining things that rarely sit in one team: applied AI research, mobile
+      product craft, cloud infrastructure and health-domain compliance. A single specialist firm could
+      not staff it. A generalist vendor could staff it, but not deeply. The community composed a team
+      from members whose depth actually matched the problem — then grew that team mid-flight, from four
+      people at discovery to twelve at peak, without breaking delivery velocity.</p>
 
-    <h3>Nine-metric adaptive engine</h3>
-    <p>The AI simultaneously analyses workouts, nutrition, hydration, sleep, activity, blood biomarkers, supplements,
-      medications and body measurements to continuously re-shape each person's plan.</p>
+    <h2>Designing an AI that is allowed to be wrong safely</h2>
 
-    <h3>Conversational-first UX</h3>
-    <p>Natural language replaces rigid forms. Users describe meals in plain words ("I ate borscht without meat"),
-      reschedule workouts and adjust targets through chat — and the AI estimates calories and macros automatically.</p>
+    <p>The coaching engine is not a single prompt. A master-coach persona sets voice and boundaries;
+      feature-specific prompts handle training, nutrition and recovery; and a second model reviews every
+      output before it reaches a user. In a health-adjacent product, that validation layer is the
+      difference between helpful and hazardous.</p>
 
-    <h3>AI simulation &amp; testing framework</h3>
-    <p>A custom synthetic-user generator simulates ten weeks of coaching, while three competing LLMs evaluate the AI's
-      decisions to surface errors before real users ever see them.</p>
+    <p>To test something this open-ended, the team built its own harness: a synthetic-user generator that
+      simulates ten weeks of coaching, with three competing models grading the AI's decisions. Errors
+      surface in simulation rather than in someone's actual training week.</p>
+  </div>
 
-    <h3>LLM-agnostic architecture &amp; compliance</h3>
-    <p>The underlying model is swappable via configuration, preventing vendor lock-in. In parallel, a dedicated legal
-      specialist built a 52-document register covering terms of use, health disclaimers and privacy policies.</p>
+  <figure class="cs-figure bleed">
+    <img src="assets/ph/cs-wide.png" alt="Adaptive coaching engine — placeholder visual">
+    <figcaption>Placeholder — replace with the adaptive-engine diagram or product footage.</figcaption>
+  </figure>
 
-    <h3>Progressive team scaling</h3>
-    <p>The engagement grew from a 4-person discovery team to a 10-person delivery squad — and a 12-specialist peak —
-      without disrupting velocity: exactly the elasticity a community of niche companies is built to provide.</p>
+  <div class="cs-wrap cs-measure" style="padding-top:var(--s64)">
+    <h2>Conversation instead of forms</h2>
 
-    <h2>The result</h2>
-    <ul>
-      <li><b>9 health metrics</b> analysed simultaneously to power AI-generated, adaptive programmes.</li>
-      <li><b>1,500+ exercises</b> in the database, each with video demonstrations.</li>
-      <li><b>52 legal documents</b> across three compliance phases, pre-launch essentials complete.</li>
-      <li><b>12 specialists</b> at peak capacity, scaled progressively from an initial team of 4.</li>
-      <li><b>45% faster</b> time-to-market · <b>30% lower</b> infrastructure cost · <b>4.8/5</b> average app rating.</li>
-    </ul>
+    <p>People abandon fitness apps because logging is work. Here, a user writes "I ate borscht without
+      meat" and the system estimates calories and macros on its own. Workouts are rescheduled and targets
+      adjusted in the same chat. The interface asks less and infers more — which is what keeps the data
+      complete enough for the AI to be useful.</p>
 
-    <blockquote>
-      "One brief to the community became a full AI-native product team — discovery, architecture, backend, mobile, QA,
-      DevOps and compliance, one backlog — that scaled with us instead of slowing us down."
-      <cite>— Andrii M., Founder, Vitalio</cite>
-    </blockquote>
+    <p>Underneath, the language model is swappable by configuration, so the product is not tied to a single
+      vendor's roadmap or pricing. In parallel, a dedicated legal specialist assembled a 52-document
+      register covering terms of use, health disclaimers and privacy — the unglamorous work that decides
+      whether a health product can actually launch.</p>
+  </div>
+</section>
 
-    <h2>Technologies</h2>
-    <div class="chips">
-      <span class="chip">Google Gemini (Flash, Pro)</span><span class="chip">Vertex AI</span>
-      <span class="chip">Google Cloud Platform</span><span class="chip">Firebase</span>
-      <span class="chip">Python</span><span class="chip">FastAPI</span>
-      <span class="chip">React Native</span><span class="chip">Expo</span>
-      <span class="chip">Apple HealthKit</span><span class="chip">Google Fit</span>
+<!-- ============ CAPABILITIES (Collins "augments") ============ -->
+<section class="cs-aug">
+  <div class="cs-wrap">
+    <h2>What the community built</h2>
+    <div class="cs-aug-grid">
+      <div class="cs-aug-item"><span class="n">01</span>
+        <div><h3>Multi-agent architecture</h3>
+        <p>A master-coach persona, feature-level prompts and a validating second model on every output.</p></div></div>
+      <div class="cs-aug-item"><span class="n">02</span>
+        <div><h3>Nine-metric adaptive engine</h3>
+        <p>Workouts, nutrition, hydration, sleep, activity, biomarkers, supplements, medication and measurements — read together.</p></div></div>
+      <div class="cs-aug-item"><span class="n">03</span>
+        <div><h3>Conversational-first UX</h3>
+        <p>Natural language replaces forms; the AI estimates nutrition from plain descriptions.</p></div></div>
+      <div class="cs-aug-item"><span class="n">04</span>
+        <div><h3>Simulation &amp; evaluation harness</h3>
+        <p>Synthetic users run ten-week programmes while three models grade the coaching decisions.</p></div></div>
+      <div class="cs-aug-item"><span class="n">05</span>
+        <div><h3>Model-agnostic foundation</h3>
+        <p>The underlying LLM is swappable by configuration — no vendor lock-in.</p></div></div>
+      <div class="cs-aug-item"><span class="n">06</span>
+        <div><h3>Compliance from day one</h3>
+        <p>A 52-document register covering terms, health disclaimers and privacy, built alongside the product.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA band -->
+<figure class="cs-figure bleed" style="margin-top:var(--s80)">
+  <img src="assets/ph/cs-detail.png" alt="Design system detail — placeholder visual">
+  <figcaption>Placeholder — replace with design-system or interface detail.</figcaption>
+</figure>
+
+<!-- ============ CREDITS + IMPACT ============ -->
+<section class="cs-credits">
+  <div class="cs-wrap">
+    <div class="grid">
+      <div>
+        <h2>Credits</h2>
+        <dl>
+          <dt>Client</dt><dd>Vitalio — EU wellness startup</dd>
+          <dt>Delivered by</dt><dd>QArea, a Unicorners member</dd>
+          <dt>Duration</dt><dd>9+ months, ongoing</dd>
+          <dt>Team</dt><dd>12 specialists at peak, from 4</dd>
+          <dt>Disciplines</dt><dd>AI/ML · Mobile · Backend · UX/UI · Cloud · QA · Legal</dd>
+          <dt>Stack</dt><dd>Gemini · Vertex AI · GCP · Firebase · Python · FastAPI · React Native</dd>
+        </dl>
+      </div>
+      <div>
+        <h2>Impact</h2>
+        <div class="cs-impact">
+          <div class="i"><b>9</b><span>Health metrics analysed together</span></div>
+          <div class="i"><b>45%</b><span>Faster time-to-market</span></div>
+          <div class="i"><b>30%</b><span>Lower infrastructure cost</span></div>
+          <div class="i"><b>4.8/5</b><span>Average app-store rating</span></div>
+          <div class="i"><b>1,500+</b><span>Exercises with video demos</span></div>
+          <div class="i"><b>52</b><span>Compliance documents</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
 <div class="cta-band" id="connect">
   <h2>Have an AI-native product to build?</h2>
   <div class="cta-row">

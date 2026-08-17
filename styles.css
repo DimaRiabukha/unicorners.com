@@ -403,3 +403,67 @@ footer .fcol a:hover{color:#fff}
 
 @media (max-width:860px){ .bb-grid{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){ .bb-card,.bb-card:hover{transition:none;transform:none} }
+
+/* ============================================================
+   CASE STUDY PAGE — editorial layout (wearecollins.com style)
+   Full-bleed imagery, one big statement, long-form prose in a
+   narrow measure, named "capabilities", credits + impact.
+   ============================================================ */
+.cs-wrap{max-width:1360px;margin:0 auto;padding:0 24px}
+.cs-measure{max-width:720px;margin:0 auto}
+
+/* hero: statement first, then full-bleed image */
+.cs-hero{padding:var(--s80) 0 var(--s48)}
+.cs-hero .meta-top{display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+  color:var(--muted);font-size:.9rem;font-weight:600;margin-bottom:26px}
+.cs-hero .meta-top .dot{color:#c3c9d1}
+.cs-hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.03;letter-spacing:-.03em;
+  max-width:17ch;font-weight:800}
+.cs-figure{margin:0}
+.cs-figure img{width:100%;height:auto;display:block;border-radius:var(--r-lg)}
+.cs-figure.bleed{max-width:1360px;margin:var(--s48) auto 0;padding:0 24px}
+.cs-figure figcaption{color:var(--muted);font-size:.88rem;margin-top:12px}
+.cs-figure figcaption a{color:var(--accent);font-weight:600}
+
+/* gallery of app screens */
+.cs-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:var(--s80) 0 0}
+.cs-gallery img{width:100%;height:auto;display:block;border-radius:var(--r)}
+
+/* long-form prose */
+.cs-body{padding:var(--s80) 0}
+.cs-body p{color:var(--ink);font-size:1.12rem;line-height:1.65;margin-bottom:var(--s24)}
+.cs-body p.lead-para{font-size:1.35rem;line-height:1.5}
+.cs-body h2{font-size:clamp(1.7rem,2.8vw,2.3rem);margin:var(--s64) 0 var(--s20);letter-spacing:-.02em}
+
+/* named capabilities — Collins "augments" */
+.cs-aug{background:#000;color:#fff;padding:var(--s96) 0;margin-top:var(--s48)}
+.cs-aug h2{color:#fff;max-width:20ch;margin-bottom:var(--s48)}
+.cs-aug-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.cs-aug-item{border-top:1px solid rgba(255,255,255,.2);padding:30px 0;
+  display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start}
+.cs-aug-item:nth-child(odd){padding-right:40px}
+.cs-aug-item:nth-child(even){padding-left:40px;border-left:1px solid rgba(255,255,255,.2)}
+.cs-aug-item .n{color:#6b7683;font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums}
+.cs-aug-item h3{color:#fff;font-size:1.25rem;margin-bottom:8px}
+.cs-aug-item p{color:#98a2ae;font-size:.98rem;line-height:1.55}
+
+/* credits + impact */
+.cs-credits{padding:var(--s96) 0}
+.cs-credits .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s80)}
+.cs-credits h2{font-size:1.5rem;margin-bottom:var(--s24)}
+.cs-credits dl{display:grid;grid-template-columns:auto 1fr;gap:12px 24px;
+  border-top:1px solid var(--line);padding-top:20px}
+.cs-credits dt{color:var(--muted);font-size:.92rem}
+.cs-credits dd{color:var(--ink);font-size:.92rem;font-weight:600;margin:0}
+.cs-impact{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cs-impact .i{border-top:1px solid var(--line);padding-top:18px}
+.cs-impact .i b{display:block;font-size:2.1rem;font-weight:800;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums}
+.cs-impact .i span{color:var(--muted);font-size:.9rem}
+
+@media (max-width:860px){
+  .cs-gallery{grid-template-columns:1fr}
+  .cs-aug-grid{grid-template-columns:1fr}
+  .cs-aug-item:nth-child(odd),.cs-aug-item:nth-child(even){padding:26px 0;border-left:0}
+  .cs-credits .grid{grid-template-columns:1fr;gap:var(--s48)}
+}
