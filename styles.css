@@ -25,6 +25,7 @@
   --navy-2:#122a49;               /* card on navy */
   --navy-line:rgba(255,255,255,.12);
   --alt:#F4F6F8;                  /* light gray section */
+  --case-gray:#C7CCD3;            /* case-tile image background */
 
   /* Stat card tints */
   --tint-blue:#E6ECFF;  --ink-blue:#2A46D6;
@@ -212,7 +213,7 @@ nav.main a:hover{color:var(--accent)}
 
 /* the image — clean, nothing on top of it */
 .tile .media{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:var(--r-lg);
-  background:var(--ink);display:flex;align-items:center;justify-content:center}
+  background:var(--case-gray);display:flex;align-items:center;justify-content:center}
 .tile .media img{width:100%;height:100%;object-fit:cover;
   transition:transform .7s cubic-bezier(.2,.6,.2,1)}
 /* micro-interaction: slight zoom only */
@@ -229,12 +230,13 @@ nav.main a:hover{color:var(--accent)}
 .tile .info h3{font-size:1.2rem;font-weight:700;color:var(--ink);
   letter-spacing:-.01em;margin-bottom:8px}
 .tile .info p{color:var(--muted);font-size:1rem;line-height:1.55;font-weight:400}
-.tile .info .domain{display:inline-block;margin-top:14px;
-  background:var(--alt);color:#98a2ae;border:1px solid var(--line);
-  border-radius:8px;padding:6px 12px;font-size:12.5px;font-weight:600;
-  transition:background .3s ease,color .3s ease,border-color .3s ease}
+.tile .info .domain{display:inline-block;margin-top:16px;
+  background:transparent;color:var(--ink);border:1.5px solid var(--ink);
+  border-radius:999px;padding:9px 18px;font-size:11.5px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  transition:background .3s ease,color .3s ease}
 /* the chip becomes more visible on hover */
-.tile:hover .info .domain{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tile:hover .info .domain{background:var(--ink);color:#fff}
 
 /* backgrounds for cases without photography */
 .tile.type .media{background:var(--brand)}
@@ -377,3 +379,26 @@ footer .fcol a:hover{color:#fff}
 @media (prefers-reduced-motion:reduce){
   .wl-ic,.why-list h3,.mini .ic{transition:none!important;transform:none!important}
 }
+
+/* ---- Brand-cards block — Testlio "leading brands" palette --------
+   Black ground, bright cards, outlined pill badges, black text.     */
+.brandblock{background:#000;color:#fff;padding:var(--s96) 0}
+.bb-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:22px}
+.bb-head h2{color:#fff;max-width:22ch}
+.bb-head a{color:#fff;font-weight:600;font-size:15px;white-space:nowrap}
+.bb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--s48)}
+.bb-card{border-radius:22px;padding:32px;display:flex;flex-direction:column;
+  min-height:330px;color:#0b0e12;
+  transition:transform .35s cubic-bezier(.2,.6,.2,1)}
+.bb-card:hover{transform:translateY(-6px)}
+.bb-card .badge{align-self:flex-start;border:1.5px solid #0b0e12;border-radius:999px;
+  padding:8px 16px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.bb-card h3{color:#0b0e12;font-size:1.45rem;line-height:1.2;margin:22px 0 14px;letter-spacing:-.015em}
+.bb-card p{color:#0b0e12;opacity:.78;font-size:.98rem;line-height:1.55}
+.bb-mint{background:#63F1A5}
+.bb-peri{background:#6B62F2}
+.bb-grey{background:#C4C9D0}
+
+@media (max-width:860px){ .bb-grid{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ .bb-card,.bb-card:hover{transition:none;transform:none} }
