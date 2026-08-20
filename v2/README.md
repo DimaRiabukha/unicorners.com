@@ -17,7 +17,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
 | Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" |
-| Client quote with avatar pill and prev/next arrows | `.quote` in the hero's right column, 3 rotating quotes |
+| Client quote with avatar pill and prev/next arrows, auto-advancing | `.quote` in the hero's right column — 3 quotes, 5s rotation with a 220ms crossfade, paused on hover/focus and while the tab is hidden; arrows reset the timer |
 | Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Bottom band of `/services/brand-creative` and `/sectors/startups-ventures`: stat, vertical rule, dotted name row | `.heroband` — "5 companies / 4 domains" + partner names, inside the hero card |
 | Nav sits ~30px below the card's top edge (measured on the sector page) | `--nav-gap` |

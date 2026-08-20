@@ -339,25 +339,46 @@ const topbar = document.getElementById('topbar');
 const onScroll = () => topbar.classList.toggle('stuck', window.scrollY > 40);
 onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-// Hero client quotes — PLACEHOLDER attributions
+// Hero client quotes — rotate every 5s, like the reference (PLACEHOLDER attributions)
 const quotes = [
   ['Unicorners deliver at high speed and equally high quality', 'Client name, Company'],
   ['The best partners to kick-start your AI product', 'Client name, Company'],
   ['Incredibly impressed with the team at Unicorners', 'Client name, Company']
 ];
-let qi = 0;
+const QUOTE_MS = 5000;
+const qFigure = document.getElementById('quote');
 const qText = document.getElementById('quote-text');
 const qWho = document.getElementById('quote-who');
 const qAvatar = document.getElementById('quote-avatar');
-const showQuote = (i) => {
-  qi = (i + quotes.length) % quotes.length;
-  const [text, who] = quotes[qi];
+const noMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+let qi = 0, qTimer = 0, qPaused = false;
+
+const paint = (i) => {
+  const [text, who] = quotes[i];
   qText.textContent = text;
   qWho.textContent = who;
   qAvatar.textContent = who.trim().charAt(0).toUpperCase();
 };
-document.getElementById('quote-prev').addEventListener('click', () => showQuote(qi - 1));
-document.getElementById('quote-next').addEventListener('click', () => showQuote(qi + 1));
+const showQuote = (i, fade = true) => {
+  qi = (i + quotes.length) % quotes.length;
+  if (!fade || noMotion) { paint(qi); return; }
+  qFigure.classList.add('fading');
+  setTimeout(() => { paint(qi); qFigure.classList.remove('fading'); }, 220);
+};
+const armQuotes = () => {
+  clearInterval(qTimer);
+  if (!qPaused) qTimer = setInterval(() => showQuote(qi + 1), QUOTE_MS);
+};
+const step = (delta) => { showQuote(qi + delta); armQuotes(); };
+
+document.getElementById('quote-prev').addEventListener('click', () => step(-1));
+document.getElementById('quote-next').addEventListener('click', () => step(1));
+
+// hold while the reader is on the quote, or the tab is in the background
+['pointerenter','focusin'].forEach(ev => qFigure.addEventListener(ev, () => { qPaused = true; clearInterval(qTimer); }));
+['pointerleave','focusout'].forEach(ev => qFigure.addEventListener(ev, () => { qPaused = false; armQuotes(); }));
+document.addEventListener('visibilitychange', () => { qPaused = document.hidden; armQuotes(); });
+armQuotes();
 
 // Mobile menu
 const burger = document.getElementById('burger');
