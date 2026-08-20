@@ -16,7 +16,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Page as a stack of inset rounded panels on a tinted paper background | insets measured off the reference: 48px sides / 24px top at a 1280 viewport (`--gutter` / `--gutter-top`), `--r:26px` radius (ref 24px), 32px padding inside the card, `--paper:#EDEEEC` |
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
-| Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" |
+| Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" — bright orange `--marker:#FF6A16` in the hero, cyan on section headings |
 | Client quote with avatar pill and prev/next arrows, auto-advancing | `.quote` in the hero's right column — 3 quotes, 5s rotation with a 220ms crossfade, paused on hover/focus and while the tab is hidden; arrows reset the timer |
 | Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Bottom band of `/services/brand-creative` and `/sectors/startups-ventures`: stat, vertical rule, dotted name row | `.heroband` — "5 companies / 4 domains" + partner names, inside the hero card |
@@ -26,7 +26,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Service cards that stack as you scroll, edges peeking | `.scard` sticky at 104/120/136px (`--i` per card) |
 | Marker underline on part of a section heading | `.u-line` — cyan stroke under "we do" |
 | Numbered editorial rows (01–04) with hover arrow | Domains section |
-| Case grid with tag chips | Selected cases |
+| Work grid: no panel, staggered columns, each card a colour ground + text + image | `.work` / `.wcard` — six cards, two columns, right column offset, `.tall`/`.wide` vary the image ratio |
 | Nav that condenses into a floating pill on scroll | `.topbar.stuck` |
 
 The hero gradient is **animated**: the base gradient drifts across a 230% background box (14s),
@@ -44,16 +44,18 @@ decorative illustration, one accent, lots of air.
 ## Sections (in page order)
 
 Header · Hero (headline, CTA, client quote, partners band) · What we do (stacking cards) ·
-Selected cases (4 tiles) · Domains (4 numbered rows) · Contact (intro + form) · Footer
+Selected cases (6 colour cards) · Domains (4 numbered rows) · Contact (intro + form) · Footer
 
 The header nav still lists **Domains before Cases**, as in the supplied copy, while the page now
 shows Cases first — anchors work either way; reorder the nav if you want them to match.
 
 ## Placeholders — replace before this goes public
 
-- **Case tiles** — 4 tiles use the "case cover format" from the copy: cover visual, domain /
-  capability chips, title, one sentence, "View case". Titles, sentences and covers are dummy.
-- **Case covers** — soft brand-tinted blocks labelled "Case visual". Real imagery to come.
+- **Case imagery** — only three real photographs exist in the shared asset set (gym, training,
+  studio microphone). The other cards fall back to v1's abstract 3D renders; the red/blue/navy
+  ones are unused because they fight the brand palette. Reference-site photography was NOT copied
+  (it is their clients' brand imagery). Supply real project photos, or say the word and I'll pull
+  licence-free stock as v1 did for the fitness case.
 - **Partner names in the hero band** — set as type with dots, following the reference, so the actual
   member logo files are no longer displayed anywhere on the page. Say if you want image logos back.
 - **Marquee placeholders** — three "Member name" chips (hollow dot) pad the loop; replace them
@@ -71,8 +73,9 @@ shows Cases first — anchors work either way; reorder the nav if you want them 
 - **Hero CTA label** — "Book a chat", taken from the reference. The supplied copy calls this
   "Discuss a project" (still used in the header, footer and contact form) — swap if preferred.
 - **Footer legal line** — "Placeholder: legal entity, address, policy links".
-- **Links** — "Explore all cases" and each "View case" point at anchors on this page; there are no
-  inner pages in v2 yet.
+- **Case pages** — cards link to v1's case pages (`../case-*.html`) and "Explore all cases" to
+  `../cases.html`, so the content is real. Those pages are still in the **v1 design**; porting
+  them into the v2 look is a separate job.
 
 ## Preview
 

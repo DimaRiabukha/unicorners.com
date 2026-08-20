@@ -124,74 +124,72 @@
   </div>
 </section>
 
-<!-- ============ Selected cases ============ -->
-<section class="panel on-light" id="cases">
+<!-- ============ Selected cases — no panel, staggered colour cards (ref: heyhihello "The work that proves it") ============ -->
+<section class="work" id="cases">
   <div class="inner pad">
-    <div class="sec-head rv">
-      <div>
-        <div class="eyebrow">Selected cases</div>
-        <h2 style="margin-top:14px">AI and deep tech in action.</h2>
-      </div>
+    <div class="work-head rv">
+      <h2>AI and deep tech <span class="u u-line">in action<svg class="squiggle" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7.4C42 4 90 9.2 132 5.4c22-2 45-1 65 1.6" vector-effect="non-scaling-stroke"/></svg></span></h2>
       <p class="lead">Our cases show how focused teams turn complex ideas into working products and
         improve AI systems already in use.</p>
     </div>
 
-    <div class="cases">
-      <!-- PLACEHOLDER case 1 -->
-      <a class="case rv" href="#contact">
-        <div class="cover"><div class="tape"></div><span>Case visual</span></div>
-        <div class="body">
-          <div class="chips"><span class="chip">Fitness technology</span><span class="chip">AI solutions</span></div>
-          <h3>Case title placeholder</h3>
-          <p>One concise sentence presenting the challenge, solution or outcome of this case.</p>
-          <span class="textlink">View case
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER case 2 -->
-      <a class="case rv" href="#contact">
-        <div class="cover"><div class="tape"></div><span>Case visual</span></div>
-        <div class="body">
-          <div class="chips"><span class="chip">Voice recognition</span><span class="chip">Deep tech</span></div>
-          <h3>Case title placeholder</h3>
-          <p>One concise sentence presenting the challenge, solution or outcome of this case.</p>
-          <span class="textlink">View case
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER case 3 -->
-      <a class="case rv" href="#contact">
-        <div class="cover"><div class="tape"></div><span>Case visual</span></div>
-        <div class="body">
-          <div class="chips"><span class="chip">Chatbots</span><span class="chip">AI quality assurance</span></div>
-          <h3>Case title placeholder</h3>
-          <p>One concise sentence presenting the challenge, solution or outcome of this case.</p>
-          <span class="textlink">View case
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- PLACEHOLDER case 4 -->
-      <a class="case rv" href="#contact">
-        <div class="cover"><div class="tape"></div><span>Case visual</span></div>
-        <div class="body">
-          <div class="chips"><span class="chip">LLM solutions</span><span class="chip">AI solutions</span></div>
-          <h3>Case title placeholder</h3>
-          <p>One concise sentence presenting the challenge, solution or outcome of this case.</p>
-          <span class="textlink">View case
-            <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
-          </span>
-        </div>
-      </a>
+    <div class="work-grid">
+      <div class="col">
+        <a class="wcard c-slate tall rv" href="../case-detail.html">
+          <div class="wtxt">
+            <h3>AI-powered fitness platform with Gemini</h3>
+            <p>An AI fitness companion that analyses nine health metrics at once and rewrites each user’s plan in real time — 45% faster time-to-market, 30% lower infrastructure cost, 4.8/5 app rating.</p>
+            <div class="wtags"><span class="wtag">Fitness technology</span><span class="wtag">AI solutions</span></div>
+          </div>
+          <img src="../assets/photos/fitness-gym-wide.jpg" alt="">
+        </a>
+        <a class="wcard c-sun rv" href="../case-qsr-ordering.html">
+          <div class="wtxt">
+            <h3>LLM order-taking that replaced bespoke ML models</h3>
+            <p>A fine-tuned system reads spoken restaurant orders — items, modifiers, quantities — across brands and menus, and scores its own confidence before it commits.</p>
+            <div class="wtags"><span class="wtag">Chatbots</span><span class="wtag">LLM solutions</span></div>
+          </div>
+          <img src="../assets/photos/w-fraud.jpg" alt="">
+        </a>
+        <a class="wcard c-ink rv" href="../case-ai-validation.html">
+          <div class="wtxt">
+            <h3>AI validation, security and compliance testing</h3>
+            <p>A SaaS platform shipped an AI assistant that writes and runs SQL against customers’ production databases. Testing it meant proving what it does when the prompt, the data or the tenant is not what it expects.</p>
+            <div class="wtags"><span class="wtag">AI quality assurance</span><span class="wtag">Security</span></div>
+          </div>
+          <img src="../assets/photos/w-qa.jpg" alt="">
+        </a>
+      </div>
+      <div class="col offset">
+        <a class="wcard c-teal rv" href="../case-ai-dubbing.html">
+          <div class="wtxt">
+            <h3>AI dubbing with tempo correction</h3>
+            <p>A phoneme-based text-to-speech service predicts spoken duration and corrects tempo against the source recording, so translated dialogue lands on the original timing.</p>
+            <div class="wtags"><span class="wtag">Voice recognition</span><span class="wtag">Deep tech</span></div>
+          </div>
+          <img src="../assets/photos/w-dubbing.jpg" alt="">
+        </a>
+        <a class="wcard c-mint wide rv" href="../case-doc-assistant.html">
+          <div class="wtxt">
+            <h3>A private AI assistant that answers only from your own documents</h3>
+            <p>For finance, pharma and legal teams who cannot put sensitive files into public AI tools: a self-hosted retrieval-augmented assistant that answers strictly from the documents it is given.</p>
+            <div class="wtags"><span class="wtag">LLM solutions</span><span class="wtag">RAG</span></div>
+          </div>
+          <img src="../assets/photos/w-llm.jpg" alt="">
+        </a>
+        <a class="wcard c-cyan tall rv" href="../case-llm-marketing.html">
+          <div class="wtxt">
+            <h3>An LLM that writes in the company’s own voice</h3>
+            <p>A generative system drafts posts, decodes internal acronyms from a company glossary and translates documents while keeping their layout — fine-tuned so the output sounds like the client.</p>
+            <div class="wtags"><span class="wtag">LLM solutions</span><span class="wtag">Marketing</span></div>
+          </div>
+          <img src="../assets/photos/w-geo.jpg" alt="">
+        </a>
+      </div>
     </div>
 
     <div class="sec-foot rv">
-      <a class="btn btn-ghost" href="#cases">Explore all cases
+      <a class="btn btn-ghost" href="../cases.html">Explore all cases
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
       </a>
     </div>
