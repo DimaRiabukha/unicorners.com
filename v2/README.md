@@ -15,7 +15,9 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 |---|---|
 | Page as a stack of inset rounded panels on a tinted paper background | `--gutter` page margin, `--r:34px` panel radius, `--paper:#F4F5F2` |
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
-| Serif accent inside an otherwise grotesk headline | Instrument Serif italic on "deep tech" |
+| One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
+| Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" |
+| Client quote with avatar pill and prev/next arrows | `.quote` in the hero's right column, 3 rotating quotes |
 | Small pill buttons (13–14px, 600) | `.btn` |
 | Numbered editorial rows (01–04) with hover arrow | Domains section |
 | Case grid with tag chips | Selected cases |
@@ -41,6 +43,9 @@ Selected cases (4 tiles) · Contact (intro + form) · Footer
 - **Icons** — three simple line icons drawn inline for AI solutions / deep-tech / AI QA.
 - **Contact form** — no delivery endpoint. Submitting shows an inline placeholder confirmation.
   Needs a form service (Formspree / Basin / own handler) or swap to `mailto:`.
+- **Client quotes** — 3 quotes adapted from the reference wording; all attributions read
+  "Client name, Company" and the avatar is an initial circle. Swap for real client names, quotes
+  and photos (or drop the block) before this is shown as testimony.
 - **Footer legal line** — "Placeholder: legal entity, address, policy links".
 - **Links** — "Explore all cases" and each "View case" point at anchors on this page; there are no
   inner pages in v2 yet.

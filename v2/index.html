@@ -35,18 +35,33 @@
 <!-- ============ Hero ============ -->
 <section class="hero panel">
   <div class="inner">
-    <h1>Community of<br><span class="line2">AI and <span class="serif-it">deep tech</span> companies</span></h1>
+    <h1>Community of<br><span class="line2"><span class="u u-short">AI<svg class="squiggle" viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7.5C18 3.6 42 4.2 62 6.4c14 1.5 24 1.2 36-1.6" vector-effect="non-scaling-stroke"/></svg></span>
+      and <span class="u">deep tech<svg class="squiggle" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8.2C38 3.4 86 9.6 128 5.2c22-2.3 46-1.4 69 1.9" vector-effect="non-scaling-stroke"/></svg></span> companies</span></h1>
 
     <div class="hero-body">
-      <p class="lead">Unicorners brings together specialist technology companies with Ukrainian roots.
-        We build AI solutions, deliver complex deep-tech projects, and improve the quality and
-        reliability of AI-powered products already in use.</p>
-      <div class="cta-row">
-        <a class="btn btn-dark" href="#contact">Discuss a project
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="#contact">Become a member</a>
+      <div>
+        <p class="lead">Unicorners brings together specialist technology companies with Ukrainian roots.
+          We build AI solutions, deliver complex deep-tech projects, and improve the quality and
+          reliability of AI-powered products already in use.</p>
+        <div class="cta-row">
+          <a class="btn btn-dark" href="#contact">Discuss a project
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#contact">Become a member</a>
+        </div>
       </div>
+
+      <!-- Client quote — PLACEHOLDER attributions -->
+      <figure class="quote" id="quote">
+        <blockquote id="quote-text">Unicorners deliver at a high speed at an equally high quality.</blockquote>
+        <figcaption class="quote-foot">
+          <span class="who"><span class="avatar" id="quote-avatar">C</span><span id="quote-who">Client name, Company</span></span>
+          <span class="arrows">
+            <button type="button" id="quote-prev" aria-label="Previous quote" aria-controls="quote-text">&#8249;</button>
+            <button type="button" id="quote-next" aria-label="Next quote" aria-controls="quote-text">&#8250;</button>
+          </span>
+        </figcaption>
+      </figure>
     </div>
 
   </div>
@@ -329,6 +344,26 @@
 const topbar = document.getElementById('topbar');
 const onScroll = () => topbar.classList.toggle('stuck', window.scrollY > 40);
 onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+// Hero client quotes — PLACEHOLDER attributions
+const quotes = [
+  ['Unicorners deliver at a high speed at an equally high quality.', 'Client name, Company'],
+  ['The best partners you could have to kick-start your AI product.', 'Client name, Company'],
+  ['Continued to be incredibly impressed with the team at Unicorners.', 'Client name, Company']
+];
+let qi = 0;
+const qText = document.getElementById('quote-text');
+const qWho = document.getElementById('quote-who');
+const qAvatar = document.getElementById('quote-avatar');
+const showQuote = (i) => {
+  qi = (i + quotes.length) % quotes.length;
+  const [text, who] = quotes[qi];
+  qText.textContent = text;
+  qWho.textContent = who;
+  qAvatar.textContent = who.trim().charAt(0).toUpperCase();
+};
+document.getElementById('quote-prev').addEventListener('click', () => showQuote(qi - 1));
+document.getElementById('quote-next').addEventListener('click', () => showQuote(qi + 1));
 
 // Mobile menu
 const burger = document.getElementById('burger');
