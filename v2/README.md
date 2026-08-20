@@ -13,7 +13,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 
 | Taken from the reference | How it appears here |
 |---|---|
-| Page as a stack of inset rounded panels on a tinted paper background | `--gutter` page margin, `--r:34px` panel radius, `--paper:#F4F5F2` |
+| Page as a stack of inset rounded panels on a tinted paper background | insets measured off the reference: 48px sides / 24px top at a 1280 viewport (`--gutter` / `--gutter-top`), `--r:26px` radius (ref 24px), 32px padding inside the card, `--paper:#EDEEEC` |
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
 | Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" |
