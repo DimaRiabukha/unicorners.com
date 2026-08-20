@@ -16,7 +16,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Page as a stack of inset rounded panels on a tinted paper background | insets measured off the reference: 48px sides / 24px top at a 1280 viewport (`--gutter` / `--gutter-top`), `--r:26px` radius (ref 24px), 32px padding inside the card, `--paper:#EDEEEC` |
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
-| Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" — bright orange `--marker:#FF6A16` in the hero, cyan on section headings |
+| Hand-drawn marks on key words: a loop around one, an underline under another | `.u-circle` ring around "AI", `.u` underline under "deep tech" — semi-white `--marker:rgba(255,255,255,.62)` in the hero; section headings use the cyan `.u-line` |
 | Client quote with avatar pill and prev/next arrows, auto-advancing | `.quote` in the hero's right column — 3 quotes, 5s rotation with a 220ms crossfade, paused on hover/focus and while the tab is hidden; arrows reset the timer |
 | Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Bottom band of `/services/brand-creative` and `/sectors/startups-ventures`: stat, vertical rule, dotted name row | `.heroband` — "5 companies / 4 domains" + partner names, inside the hero card |
@@ -65,7 +65,7 @@ shows Cases first — anchors work either way; reorder the nav if you want them 
 - **Icons** — three simple line icons drawn inline for AI solutions / deep-tech / AI QA.
 - **Contact form** — no delivery endpoint. Submitting shows an inline placeholder confirmation.
   Needs a form service (Formspree / Basin / own handler) or swap to `mailto:`.
-- **Client quotes** — 3 two-line quotes adapted from the reference wording; all attributions read
+- **Client quotes** — 3 quotes adapted from the reference wording (two two-line, one short); all attributions read
   "Client name, Company" and the avatar is an initial circle. Swap for real client names, quotes
   and photos (or drop the block) before this is shown as testimony.
 - **Card links** — "Explore AI solutions / deep-tech projects / AI quality assurance" and the

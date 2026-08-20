@@ -30,7 +30,7 @@
   --dark-line:rgba(255,255,255,.16);
   --ph:#E8EAE5;             /* placeholder block fill */
   --accent:#0B8F8F;         /* solid brand cyan for links on white */
-  --marker:#FF6A16;         /* bright orange hero marker underline */
+  --marker:rgba(255,255,255,.62);  /* semi-white hero marker, as in the reference */
 
   /* Rhythm */
   --gutter:clamp(14px,3.75vw,56px); /* side page margin — reference: 48px at 1280 */
@@ -177,6 +177,12 @@ p{color:var(--muted)}
 .u .squiggle{position:absolute;left:-2%;bottom:.005em;width:104%;height:.17em;overflow:visible;
   fill:none;stroke:rgba(255,255,255,.92);stroke-width:9;stroke-linecap:round}
 .hero .u .squiggle{stroke:var(--marker)}
+
+/* hand-drawn ring around a word (ref: the loop around "fast") */
+.u-circle{position:relative;display:inline-block;white-space:nowrap}
+.u-circle .ring{position:absolute;left:-30%;top:-5%;width:161%;height:118%;overflow:visible;
+  fill:none;stroke:var(--marker);stroke-width:7;stroke-linecap:round;pointer-events:none}
+.u-circle{margin-right:.04em}
 .u-short .squiggle{left:-8%;width:116%;stroke-width:8}
 .hero-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   gap:clamp(28px,5vw,80px);align-items:start;margin-top:clamp(26px,3.4vw,48px)}
