@@ -130,9 +130,8 @@ p{color:var(--muted)}
   fill:none;stroke:rgba(255,255,255,.92);stroke-width:9;stroke-linecap:round}
 .u-short .squiggle{left:-8%;width:116%;stroke-width:8}
 .hero-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
-  gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(28px,4vw,56px)}
-.hero-body .lead{color:rgba(14,18,16,.78);max-width:46ch;font-weight:450}
-.hero .cta-row{margin-top:var(--s32)}
+  gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(40px,7vw,96px)}
+.hero-body .cta-row{margin-bottom:2px}
 
 /* client quote (ref: quote + avatar pill + prev/next) — placeholder attributions */
 .quote{display:flex;flex-direction:column;gap:var(--s24);align-items:flex-start}

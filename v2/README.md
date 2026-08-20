@@ -18,6 +18,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
 | Hand-drawn marker underline on key words | `.u` + inline `.squiggle` SVG under "AI" and "deep tech" |
 | Client quote with avatar pill and prev/next arrows | `.quote` in the hero's right column, 3 rotating quotes |
+| Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Small pill buttons (13–14px, 600) | `.btn` |
 | Numbered editorial rows (01–04) with hover arrow | Domains section |
 | Case grid with tag chips | Selected cases |
@@ -46,6 +47,8 @@ Selected cases (4 tiles) · Contact (intro + form) · Footer
 - **Client quotes** — 3 quotes adapted from the reference wording; all attributions read
   "Client name, Company" and the avatar is an initial circle. Swap for real client names, quotes
   and photos (or drop the block) before this is shown as testimony.
+- **Hero CTA label** — "Book a chat", taken from the reference. The supplied copy calls this
+  "Discuss a project" (still used in the header, footer and contact form) — swap if preferred.
 - **Footer legal line** — "Placeholder: legal entity, address, policy links".
 - **Links** — "Explore all cases" and each "View case" point at anchors on this page; there are no
   inner pages in v2 yet.
