@@ -174,7 +174,7 @@ p{color:var(--muted)}
   fill:none;stroke:rgba(255,255,255,.92);stroke-width:9;stroke-linecap:round}
 .u-short .squiggle{left:-8%;width:116%;stroke-width:8}
 .hero-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
-  gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(40px,7vw,96px)}
+  gap:clamp(28px,5vw,80px);align-items:start;margin-top:clamp(26px,3.4vw,48px)}
 .hero-body .cta-row{margin-bottom:2px}
 
 /* client quote (ref: quote + avatar pill + prev/next) — placeholder attributions */
