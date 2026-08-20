@@ -16,7 +16,7 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Page as a stack of inset rounded panels on a tinted paper background | insets measured off the reference: 48px sides / 24px top at a 1280 viewport (`--gutter` / `--gutter-top`), `--r:26px` radius (ref 24px), 32px padding inside the card, `--paper:#EDEEEC` |
 | Oversized Inter 800 headline, tight tracking (−3.5%), sentence case | `h1` / `h2` |
 | One solid weight/typeface across the whole headline | `h1` is Inter 800 throughout |
-| Hand-drawn marks on key words: a loop around one, an underline under another | `.u-circle` ring around "AI", `.u` underline under "deep tech" — semi-white `--marker:rgba(255,255,255,.62)` in the hero; section headings use the cyan `.u-line` |
+| Hand-drawn loop around the key phrase (as on `/sectors/startups-ventures`) | `.u-ring` — an open ellipse with an overshoot, `preserveAspectRatio:none`, round caps, stretched over "AI and deep tech" in semi-white `--marker:rgba(255,255,255,.62)`; section headings keep the cyan `.u-line` |
 | Client quote with avatar pill and prev/next arrows, auto-advancing | `.quote` in the hero's right column — 3 quotes, 5s rotation with a 220ms crossfade, paused on hover/focus and while the tab is hidden; arrows reset the timer |
 | Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Bottom band of `/services/brand-creative` and `/sectors/startups-ventures`: stat, vertical rule, dotted name row | `.heroband` — "5 companies / 4 domains" + partner names, inside the hero card |
