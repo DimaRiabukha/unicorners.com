@@ -21,6 +21,9 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Hero carries no descriptive paragraph, one CTA only | headline + single **Book a chat** button + quote |
 | Bottom band of `/services/brand-creative`: stat, vertical rule, dotted name row | `.heroband` — "5 companies / 4 domains" + member names, inside the hero card |
 | Small pill buttons (13–14px, 600) | `.btn` |
+| "What we do" sits on the page background, no card | `.wwd` — sticky intro column + stacking cards |
+| Service cards that stack as you scroll, edges peeking | `.scard` sticky at 104/120/136px (`--i` per card) |
+| Marker underline on part of a section heading | `.u-line` — cyan stroke under "we do" |
 | Numbered editorial rows (01–04) with hover arrow | Domains section |
 | Case grid with tag chips | Selected cases |
 | Nav that condenses into a floating pill on scroll | `.topbar.stuck` |
@@ -54,6 +57,8 @@ Selected cases (4 tiles) · Contact (intro + form) · Footer
 - **Client quotes** — 3 quotes adapted from the reference wording; all attributions read
   "Client name, Company" and the avatar is an initial circle. Swap for real client names, quotes
   and photos (or drop the block) before this is shown as testimony.
+- **Card links** — "Explore AI solutions / deep-tech projects / AI quality assurance" and the
+  intro's "Explore domains" pill all point at on-page anchors; there are no service pages yet.
 - **Hero CTA label** — "Book a chat", taken from the reference. The supplied copy calls this
   "Discuss a project" (still used in the header, footer and contact form) — swap if preferred.
 - **Footer legal line** — "Placeholder: legal entity, address, policy links".
