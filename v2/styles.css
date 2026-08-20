@@ -119,10 +119,10 @@ p{color:var(--muted)}
 .mobile-menu .btn{margin-top:14px;width:100%;justify-content:center}
 
 /* ---- Hero ---- */
-.hero{background:var(--brand);background-size:190% 190%;border-radius:var(--r);color:var(--ink);
+.hero{background:var(--brand);background-size:230% 230%;border-radius:var(--r);color:var(--ink);
   margin-top:calc(-1 * (56px + var(--gutter)));padding-top:calc(56px + var(--gutter));
   position:relative;isolation:isolate;
-  animation:hero-drift 36s ease-in-out infinite alternate}
+  animation:hero-drift 14s ease-in-out infinite alternate}
 .hero .inner{padding-top:clamp(72px,11vw,150px);padding-bottom:clamp(64px,8vw,110px);
   position:relative;z-index:2}
 
@@ -130,18 +130,29 @@ p{color:var(--muted)}
 .mesh{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .mesh span{position:absolute;display:block;border-radius:50%;filter:blur(70px);
   will-change:transform;transform:translate3d(0,0,0)}
-.mesh .m1{width:52vw;height:52vw;left:-10%;top:-26%;opacity:.45;
+.mesh .m1{width:58vw;height:58vw;left:-14%;top:-30%;opacity:.72;
   background:radial-gradient(circle at 50% 50%,#00E3D2 0%,rgba(0,227,210,0) 68%);
-  animation:mesh-1 34s ease-in-out infinite alternate}
-.mesh .m2{width:54vw;height:54vw;right:-10%;top:-18%;opacity:.62;
+  animation:mesh-1 15s ease-in-out infinite alternate}
+.mesh .m2{width:56vw;height:56vw;right:-12%;top:-22%;opacity:.78;
   background:radial-gradient(circle at 50% 50%,#FFE45C 0%,rgba(255,228,92,0) 68%);
-  animation:mesh-2 44s ease-in-out infinite alternate}
-.mesh .m3{width:56vw;height:56vw;left:26%;bottom:-40%;opacity:.32;
+  animation:mesh-2 19s ease-in-out infinite alternate}
+.mesh .m3{width:60vw;height:60vw;left:22%;bottom:-44%;opacity:.6;
   background:radial-gradient(circle at 50% 50%,#7FE0A8 0%,rgba(127,224,168,0) 66%);
-  animation:mesh-3 52s ease-in-out infinite alternate}
-.mesh .sweep{position:absolute;inset:-30% -60%;border-radius:0;filter:none;opacity:.22;
+  animation:mesh-3 24s ease-in-out infinite alternate}
+.mesh .sweep{position:absolute;inset:-30% -60%;border-radius:0;filter:none;opacity:.34;
   background:linear-gradient(104deg,transparent 42%,rgba(255,255,255,.85) 50%,transparent 58%);
-  animation:mesh-sweep 22s linear infinite}
+  animation:mesh-sweep 11s linear infinite}
+
+/* light that follows the cursor across the hero (falls back to a slow orbit) */
+.mesh .spot{position:absolute;left:0;top:0;width:34vw;height:34vw;border-radius:50%;
+  opacity:.62;filter:blur(52px);
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.9) 0%,rgba(255,255,255,0) 66%);
+  transform:translate3d(-50%,-50%,0);animation:spot-orbit 18s ease-in-out infinite alternate}
+.mesh .spot.tracking{animation:none}
+@keyframes spot-orbit{
+  0%{transform:translate3d(30vw,10vw,0) translate(-50%,-50%)}
+  100%{transform:translate3d(62vw,28vw,0) translate(-50%,-50%)}
+}
 
 @keyframes hero-drift{
   0%{background-position:0% 46%}
@@ -149,18 +160,18 @@ p{color:var(--muted)}
 }
 @keyframes mesh-1{
   0%{transform:translate3d(0,0,0) scale(1)}
-  50%{transform:translate3d(9vw,5vw,0) scale(1.14)}
-  100%{transform:translate3d(2vw,10vw,0) scale(1.02)}
+  50%{transform:translate3d(18vw,9vw,0) scale(1.26)}
+  100%{transform:translate3d(5vw,18vw,0) scale(1.04)}
 }
 @keyframes mesh-2{
-  0%{transform:translate3d(0,0,0) scale(1.06)}
-  50%{transform:translate3d(-11vw,7vw,0) scale(.94)}
-  100%{transform:translate3d(-4vw,13vw,0) scale(1.1)}
+  0%{transform:translate3d(0,0,0) scale(1.08)}
+  50%{transform:translate3d(-21vw,12vw,0) scale(.88)}
+  100%{transform:translate3d(-8vw,22vw,0) scale(1.16)}
 }
 @keyframes mesh-3{
   0%{transform:translate3d(0,0,0) scale(1)}
-  50%{transform:translate3d(-8vw,-6vw,0) scale(1.12)}
-  100%{transform:translate3d(6vw,-2vw,0) scale(.98)}
+  50%{transform:translate3d(-16vw,-11vw,0) scale(1.22)}
+  100%{transform:translate3d(12vw,-4vw,0) scale(.94)}
 }
 @keyframes mesh-sweep{
   0%{transform:translate3d(-38%,0,0)}
@@ -197,17 +208,25 @@ p{color:var(--muted)}
 .heroband{border-top:1px solid rgba(14,18,16,.18);margin-top:clamp(48px,7vw,96px);
   padding-top:clamp(26px,3vw,38px);display:grid;grid-template-columns:auto 1fr;
   gap:clamp(24px,4vw,64px);align-items:start}
-.hb-num{display:flex;align-items:baseline;gap:10px;font-size:clamp(1.5rem,2.5vw,2.05rem);
+.hb-num{display:flex;align-items:baseline;gap:10px;white-space:nowrap;font-size:clamp(1.5rem,2.5vw,2.05rem);
   font-weight:800;letter-spacing:-.035em;line-height:1}
 .hb-num span{font-weight:400;font-size:.82em;color:rgba(14,18,16,.6);letter-spacing:-.02em}
 .hb-sub{margin-top:10px;font-size:14.5px;color:rgba(14,18,16,.68)}
 .hb-sub i{font-family:var(--serif);font-style:italic;font-size:1.1em}
-.hb-partners{border-left:1px solid rgba(14,18,16,.18);padding-left:clamp(24px,4vw,64px)}
+.hb-partners{border-left:1px solid rgba(14,18,16,.18);padding-left:clamp(24px,4vw,64px);min-width:0}
 .hb-eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   color:rgba(14,18,16,.6);margin-bottom:16px}
-.hb-names{display:flex;flex-wrap:wrap;gap:12px clamp(18px,2.6vw,34px)}
+.hb-marquee{overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 92%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 92%,transparent 100%)}
+.hb-track{display:flex;width:max-content;animation:hb-scroll 42s linear infinite}
+.hb-marquee:hover .hb-track{animation-play-state:paused}
+@keyframes hb-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.hb-names{display:flex;flex:none;gap:clamp(18px,2.6vw,34px);padding-right:clamp(18px,2.6vw,34px)}
 .hb-names li{display:inline-flex;align-items:center;gap:9px;font-weight:700;
   font-size:clamp(.95rem,1.1vw,1.06rem);letter-spacing:-.02em;white-space:nowrap}
+.hb-names li.ph{font-weight:600;color:rgba(14,18,16,.5)}
+.hb-names li.ph:before{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(14,18,16,.32)}
 .hb-names li:before{content:"";width:8px;height:8px;border-radius:999px;
   background:rgba(14,18,16,.3);flex:none}
 
@@ -218,10 +237,10 @@ p{color:var(--muted)}
 .sec-head .lead{margin-top:6px}
 
 /* ---- What we do — no panel, sticky stacking cards (ref: heyhihello) ---- */
-.wwd{background:transparent}
+.wwd{background:transparent;margin-top:clamp(28px,5vw,88px)}
 .wwd + .panel{margin-top:var(--gutter)}
-.wwd-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
-  gap:clamp(32px,6vw,96px);align-items:start}
+.wwd-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.94fr);
+  gap:clamp(32px,6vw,104px);align-items:start}
 .wwd-intro{position:sticky;top:calc(56px + var(--gutter) + 40px)}
 .wwd-intro .lead{margin-top:var(--s24)}
 .wwd-intro .btn{margin-top:var(--s32)}
@@ -229,14 +248,14 @@ p{color:var(--muted)}
 .btn-brand{background:var(--brand);color:var(--ink)}
 .btn-brand:hover{transform:translateY(-1px);filter:saturate(1.08)}
 
-.stack{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px);padding-bottom:22vh}
-.scard{position:sticky;top:calc(56px + var(--gutter) + 32px + var(--i) * 16px);
+.stack{display:flex;flex-direction:column;gap:clamp(28px,3.6vw,48px);padding-bottom:22vh}
+.scard{position:sticky;top:calc(56px + var(--gutter) + 32px + var(--i) * 18px);
   background:var(--panel);border-radius:var(--r-card);
-  padding:clamp(28px,3vw,46px);display:flex;flex-direction:column;gap:var(--s16);
+  padding:clamp(24px,2.4vw,36px);display:flex;flex-direction:column;gap:var(--s12);
   box-shadow:0 22px 50px rgba(14,18,16,.10),0 2px 6px rgba(14,18,16,.04);
   transition:transform .5s ease,box-shadow .5s ease}
-.scard h3{font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-.032em}
-.scard p{font-size:clamp(1rem,1.15vw,1.1rem);line-height:1.5;max-width:42ch}
+.scard h3{font-size:clamp(1.35rem,2vw,1.7rem);letter-spacing:-.032em}
+.scard p{font-size:clamp(.97rem,1.05vw,1.03rem);line-height:1.5;max-width:40ch}
 .cardlink{margin-top:var(--s12);display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
   font-size:15px;font-weight:700;color:var(--accent,#0E9C9C);transition:gap .18s}
 .cardlink span{font-size:1.05em}
@@ -329,7 +348,8 @@ form.done .sent{display:block}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
-  .hero,.mesh span{animation:none}
+  .hero,.mesh span,.hb-track{animation:none}
+  .mesh .spot{display:none}
   .mesh .sweep{display:none}
 }
 

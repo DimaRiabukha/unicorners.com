@@ -28,9 +28,14 @@ Structure and visual language adapted from **heyhihello.com** (main page):
 | Case grid with tag chips | Selected cases |
 | Nav that condenses into a floating pill on scroll | `.topbar.stuck` |
 
-The hero gradient is **animated**: the base gradient drifts across a 190% background box (36s),
-three blurred brand-colour fields drift and scale on their own long cycles (34/44/52s), and a
-faint light sweep crosses every 22s. All of it stops under `prefers-reduced-motion`.
+The hero gradient is **animated and cursor-reactive**: the base gradient drifts across a 230%
+background box (14s), three blurred brand-colour fields drift and scale on 15/19/24s cycles, a
+light sweep crosses every 11s, and a soft white light follows the pointer across the hero
+(lerped, `requestAnimationFrame`). Without a fine pointer — touch devices — that light orbits
+slowly instead. Everything stops under `prefers-reduced-motion`.
+
+The member names in the hero band run as an infinite **marquee** (two identical halves, 42s
+linear, `translateX(-50%)`), masked at both edges and paused on hover.
 
 Recoloured to the Unicorners brand gradient — **green `#00C2C2` → yellow `#FFD220`** (via
 `#63CBA0`). Gradient is used on the hero panel, the three "what we do" icon tiles and the case
@@ -49,6 +54,8 @@ Selected cases (4 tiles) · Contact (intro + form) · Footer
 - **Case covers** — soft brand-tinted blocks labelled "Case visual". Real imagery to come.
 - **Member names in the hero band** — set as type with dots, following the reference, so the actual
   member logo files are no longer displayed anywhere on the page. Say if you want image logos back.
+- **Marquee placeholders** — three "Member name" chips (hollow dot) pad the loop; replace them
+  with real members or delete them.
 - **Band figures** — "5 companies / 4 domains" counts what the page currently lists; update as
   members join.
 - **Icons** — three simple line icons drawn inline for AI solutions / deep-tech / AI QA.
