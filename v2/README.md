@@ -50,12 +50,17 @@ decorative illustration, one accent, lots of air.
 ## Sections (in page order)
 
 Header · Hero (headline, CTA, client quote, partners band) · What we do (stacking cards) ·
-Selected cases (6 colour cards) · Domains (4 numbered rows) · Contact (intro + form) · Footer
+View the demo (spine shelf) · Selected cases (6 colour cards) · Domains (4 numbered rows) · Contact (intro + form) · Footer
 
 The header nav still lists **Domains before Cases**, as in the supplied copy, while the page now
 shows Cases first — anchors work either way; reorder the nav if you want them to match.
 
 ## Placeholders — replace before this goes public
+
+- **Spine shelf ("View the demo")** — modelled on COLLINS' case-studies *Spines* view (their
+  artwork is canvas-drawn, so nothing was copied): ten CSS book spines on black, varying heights,
+  vertical titles, hover pulls a spine up and widens it. Six carry real case names and link to the
+  case pages; four are "Case name" placeholders. Colours and covers are ready to be replaced.
 
 - **Case imagery** — only three real photographs exist in the shared asset set (gym, training,
   studio microphone). The other cards fall back to v1's abstract 3D renders; the red/blue/navy
