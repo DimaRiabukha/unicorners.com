@@ -289,7 +289,7 @@ p{color:var(--muted)}
 .spines-head h2{font-size:clamp(1.9rem,3.6vw,3rem);letter-spacing:-.035em}
 .spines-head p{margin-top:var(--s12);color:rgba(255,255,255,.6);font-size:1.02rem}
 
-.spine-stack{margin-top:clamp(40px,6vw,90px);display:flex;flex-direction:column}
+.spine-stack{margin-top:clamp(40px,6vw,90px);display:flex;flex-direction:column;gap:12px}
 .spine-stack .spine{position:relative;display:flex;align-items:center;justify-content:space-between;
   gap:var(--s24);height:var(--h);width:var(--w);margin-left:var(--ml);
   padding:0 clamp(16px,2.4vw,34px);background:var(--c);overflow:hidden;
@@ -302,11 +302,12 @@ p{color:var(--muted)}
 @keyframes spine-unroll{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 .spine-t{font-size:clamp(13px,1.05vw,16px);font-weight:500;color:rgba(255,255,255,.92);
   letter-spacing:-.01em;max-width:46%;position:relative;z-index:2}
-.spine-m{font-size:clamp(2.4rem,7vw,7rem);font-weight:800;letter-spacing:-.05em;line-height:.8;
-  color:rgba(255,255,255,.92);white-space:nowrap;margin-right:-.06em;
-  transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-.spine:hover{transform:translateX(6px)}
-.spine:hover .spine-m{transform:translateX(-14px)}
+.spine-logo[src$=".png"]{filter:brightness(0) invert(1)}
+.spine-logo{height:56%;max-height:76px;width:auto;object-fit:contain;flex:none;
+  opacity:.95;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.spine-stack .spine:hover{transform:scale(1.02)}
+.spine-stack .spine:hover .spine-logo{transform:scale(1.06)}
 .spine:focus-visible{outline:2px solid var(--g-yellow);outline-offset:-4px}
 
 @media (prefers-reduced-motion:reduce){
