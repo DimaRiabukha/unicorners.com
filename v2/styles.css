@@ -303,9 +303,7 @@ p{color:var(--muted)}
 .spine-t{display:inline-flex;align-items:center;gap:6px;
   font-size:clamp(13px,1.05vw,16px);font-weight:500;color:rgba(255,255,255,.92);
   letter-spacing:-.01em;max-width:52%;position:relative;z-index:2}
-.spine-icon{height:clamp(42px,4.6vw,60px);width:auto;flex:none;opacity:.95;margin:-8px 0;
-  transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.spine-stack .spine:hover .spine-icon{transform:scale(1.08)}
+.spine-logo--big{height:88%;max-height:none;opacity:1}
 .spine-logo[src$=".png"]{filter:brightness(0) invert(1)}
 .spine-logo{height:56%;max-height:76px;width:auto;object-fit:contain;flex:none;
   opacity:.95;
