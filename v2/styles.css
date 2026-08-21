@@ -281,37 +281,41 @@ p{color:var(--muted)}
 .row:hover .arrow{background:var(--brand);color:var(--ink);border-color:transparent}
 
 
-/* ---- View the demo — spine shelf (ref: COLLINS case-studies "Spines" view) ---- */
-.demo{background:#0E1210}
-.demo-head h2{max-width:18ch}
-.demo-head .lead{margin-top:var(--s16);max-width:52ch}
-.shelf{margin-top:clamp(40px,5vw,72px);display:flex;align-items:flex-end;justify-content:center;
-  gap:clamp(6px,.7vw,10px);padding-bottom:26px;position:relative;
-  perspective:1400px}
-.shelf:after{content:"";position:absolute;left:0;right:0;bottom:12px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28) 12%,rgba(255,255,255,.28) 88%,transparent)}
-.spine{position:relative;flex:0 0 auto;width:clamp(42px,8.2vw,102px);
-  height:calc(clamp(210px,25vw,340px) * var(--sh,1));
-  border-radius:5px 5px 3px 3px;overflow:hidden;
-  background:linear-gradient(160deg,var(--c1),var(--c2));
-  box-shadow:inset -1px 0 0 rgba(255,255,255,.14),inset 1px 0 0 rgba(0,0,0,.35),
-    0 14px 26px rgba(0,0,0,.45);
-  transform-origin:50% 100%;
-  transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s ease,width .38s cubic-bezier(.2,.8,.2,1)}
-.spine:before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(255,255,255,.18),transparent 18%,transparent 82%,rgba(0,0,0,.28))}
-.spine-face{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
-  padding:14px 0 18px}
-.spine-title{writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
-  font-size:clamp(11px,1.15vw,15px);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.95);
-  white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.4)}
-.spine:hover{transform:translateY(-26px) rotate(-1.6deg);width:clamp(58px,10.4vw,128px);
-  box-shadow:inset -1px 0 0 rgba(255,255,255,.2),0 26px 44px rgba(0,0,0,.55)}
-.spine:focus-visible{outline:2px solid var(--g-yellow);outline-offset:3px}
+/* ---- View the demo — horizontal spines stacked on black, full-bleed, no card
+       (ref: wearecollins.com/case-studies, "Spines" view) ---- */
+.spines{background:#100C09;margin:var(--gutter) calc(-1 * var(--gutter)) 0;
+  padding:clamp(64px,9vw,150px) 0 clamp(72px,10vw,170px);color:#fff;overflow:hidden}
+.spines-inner{max-width:1560px;margin:0 auto;padding:0 clamp(18px,4vw,72px)}
+.spines-head h2{font-size:clamp(1.9rem,3.6vw,3rem);letter-spacing:-.035em}
+.spines-head p{margin-top:var(--s12);color:rgba(255,255,255,.6);font-size:1.02rem}
 
-@media (max-width:900px){
-  .shelf{flex-wrap:wrap;justify-content:flex-start;gap:8px}
-  .spine{width:clamp(34px,7vw,48px);height:clamp(170px,34vw,240px)}
+.spine-stack{margin-top:clamp(40px,6vw,90px);display:flex;flex-direction:column}
+.spine-stack .spine{position:relative;display:flex;align-items:center;justify-content:space-between;
+  gap:var(--s24);height:var(--h);width:var(--w);margin-left:var(--ml);
+  padding:0 clamp(16px,2.4vw,34px);background:var(--c);overflow:hidden;
+  /* hidden state stays IO-friendly (no clip-path until it reveals) */
+  opacity:0;transform:translateX(-18px);
+  transition:opacity .5s ease var(--d,0ms),transform .55s cubic-bezier(.2,.8,.2,1) var(--d,0ms)}
+.spine-stack .spine.in{opacity:1;transform:none;
+  /* the band unrolls from the left, staggered — the reference's reveal */
+  animation:spine-unroll .95s cubic-bezier(.16,.84,.24,1) var(--d,0ms) both}
+@keyframes spine-unroll{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.spine-t{font-size:clamp(13px,1.05vw,16px);font-weight:500;color:rgba(255,255,255,.92);
+  letter-spacing:-.01em;max-width:46%;position:relative;z-index:2}
+.spine-m{font-size:clamp(2.4rem,7vw,7rem);font-weight:800;letter-spacing:-.05em;line-height:.8;
+  color:rgba(255,255,255,.92);white-space:nowrap;margin-right:-.06em;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.spine:hover{transform:translateX(6px)}
+.spine:hover .spine-m{transform:translateX(-14px)}
+.spine:focus-visible{outline:2px solid var(--g-yellow);outline-offset:-4px}
+
+@media (prefers-reduced-motion:reduce){
+  .spine-stack .spine{opacity:1;transform:none;transition:none}
+  .spine-stack .spine.in{animation:none}
+}
+@media (max-width:720px){
+  .spine{width:100%!important;margin-left:0!important;height:calc(var(--h) * .7)}
+  .spine-t{max-width:56%}
 }
 
 /* ---- Selected cases — no panel, staggered colour cards (ref: heyhihello work grid) ---- */

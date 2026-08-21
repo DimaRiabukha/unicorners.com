@@ -75,10 +75,12 @@ shows Cases first — anchors work either way; reorder the nav if you want them 
 
 ## Placeholders — replace before this goes public
 
-- **Spine shelf ("View the demo")** — modelled on COLLINS' case-studies *Spines* view (their
-  artwork is canvas-drawn, so nothing was copied): ten CSS book spines on black, varying heights,
-  vertical titles, hover pulls a spine up and widens it. Six carry real case names and link to the
-  case pages; four are "Case name" placeholders. Colours and covers are ready to be replaced.
+- **Spines ("View the demo")** — COLLINS' case-studies *Spines* view: ten horizontal colour bands
+  stacked down the page on a full-bleed black ground (no card, no panel), ragged widths and
+  indents, varying heights, small title left and a big wordmark right. Each band unrolls from the
+  left as it scrolls into view, staggered 70ms apart, and shifts on hover. Six carry real cases and
+  link to their pages; four are placeholders. Colours and marks are placeholders — the reference's
+  artwork is canvas-drawn and is their clients' branding, so none of it was copied.
 
 - **Case imagery** — only three real photographs exist in the shared asset set (gym, training,
   studio microphone). The other cards fall back to v1's abstract 3D renders; the red/blue/navy
