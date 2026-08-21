@@ -47,6 +47,24 @@ Recoloured to the Unicorners brand gradient — **green `#00C2C2` → yellow `#F
 covers; everything else is ink `#0E1210`, white and paper grey. Minimalist by intent: no
 decorative illustration, one accent, lots of air.
 
+## Case pages — `case-<slug>.html`
+
+Six case pages built to the block sequence of **wearecollins.com/programs/expansion**, all six
+blocks and their animations:
+
+| Reference block | How it appears here |
+|---|---|
+| Hero: eyebrow at the left margin, centred title, one-line excerpt | `.case-hero` |
+| Story slideshow: rounded full-width image, progress bars bottom-left, client pill bottom-right | `.story` — crossfades every 4.6s, bars fill in step, "Delivered by <member>" pill |
+| Credits column beside a paragraph that fills with ink as it scrolls | `.credits` + `.tsf` — scroll-linked `linear-gradient` on `background-clip:text`, exactly the reference's mechanism |
+| Dark panel of numbered features | `.featureblock` / `.fgrid` — the six numbered workstreams from v1 |
+| Impact: heading, arrows, carousel of stat cards | `.impact` / `.rail` — snap scrolling, arrows disable at the ends |
+| Narrative rows | `.narrative` — v1's long-form sections, padded with placeholders |
+| More programs → More cases | `.more` |
+
+Content is v1's real case content (titles, credits, stats, workstreams, long-form sections),
+re-cut into these blocks. Shared `case.css` + `case.js`; the homepage cards and spines link here.
+
 ## Sections (in page order)
 
 Header · Hero (headline, CTA, client quote, partners band) · What we do (stacking cards) ·
@@ -84,9 +102,10 @@ shows Cases first — anchors work either way; reorder the nav if you want them 
 - **Hero CTA label** — "Book a chat", taken from the reference. The supplied copy calls this
   "Discuss a project" (still used in the header, footer and contact form) — swap if preferred.
 - **Footer legal line** — "Placeholder: legal entity, address, policy links".
-- **Case pages** — cards link to v1's case pages (`../case-*.html`) and "Explore all cases" to
-  `../cases.html`, so the content is real. Those pages are still in the **v1 design**; porting
-  them into the v2 look is a separate job.
+- **Case-page gaps** — each page's narrative block is padded with "Section title placeholder"
+  rows where v1 had fewer long-form sections, and the hero slideshow reuses the same two or three
+  images per case. "Explore all cases" still points at v1's `../cases.html` — there is no v2 cases
+  index yet.
 
 ## Preview
 

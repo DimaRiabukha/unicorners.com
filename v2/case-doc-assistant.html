@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An AI assistant that can be trusted with confidential files. — Unicorners case study</title>
+<meta name="description" content="For finance, pharma and legal teams who can’t put sensitive files into public AI tools: a self-hosted retrieval-augmented assistant that answers strictly from uploaded documents, with a citation behind every sentence and full compliance logging.">
+<link rel="icon" href="../assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="case.css?v=1">
+</head>
+<body>
+
+<!-- Header -->
+<div class="topbar" id="topbar">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../assets/logo-unicorners-long.svg" alt="Unicorners"></a>
+    <nav class="nav">
+      <a href="index.html#what-we-do">What we do</a>
+      <a href="index.html#domains">Domains</a>
+      <a href="index.html#cases">Cases</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-dark btn-sm nav-cta" href="index.html#contact">Discuss a project</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html#what-we-do">What we do</a>
+    <a href="index.html#domains">Domains</a>
+    <a href="index.html#cases">Cases</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="btn btn-dark" href="index.html#contact">Discuss a project</a>
+  </nav>
+</div>
+
+<!-- Hero -->
+<section class="case-hero">
+  <div class="inner">
+    <div class="eyebrow">Enterprise AI · RAG &amp; Compliance</div>
+    <div class="case-head">
+      <h1>An AI assistant that can be trusted with confidential files.</h1>
+      <p class="excerpt">For finance, pharma and legal teams who can’t put sensitive files into public AI tools: a self-hosted retrieval-augmented assistant that answers strictly from uploaded documents, with a citation behind every sentence and full compliance logging.</p>
+    </div>
+    <div style="text-align:right">
+      <a class="backlink" href="index.html#cases">&#8592; All cases</a>
+    </div>
+  </div>
+</section>
+
+<!-- Story slideshow -->
+<section class="case-story">
+  <div class="inner">
+    <div class="story rv">
+      <div class="frames">
+        <img src="../assets/photos/w-llm.jpg" alt="" class="on">
+        <img src="../assets/covers/cs-llm.png" alt="">
+      </div>
+      <div class="bars">
+        <span class="bar on"><i></i></span>
+        <span class="bar"><i></i></span>
+      </div>
+      <span class="pill">Delivered by Unidata Lab</span>
+    </div>
+  </div>
+</section>
+
+<!-- Credits + scroll-fill paragraph -->
+<section class="case-meta">
+  <div class="inner storygrid">
+    <div class="credits rv">
+      <dl><dt>Client</dt><dd>Regulated-sector organisation</dd></dl>
+      <dl><dt>Delivered by</dt><dd>Unidata Lab, a Unicorners member</dd></dl>
+      <dl><dt>Scope</dt><dd>Self-hosted RAG assistant</dd></dl>
+      <dl><dt>Deployment</dt><dd>Secure Docker, on client infrastructure</dd></dl>
+      <dl><dt>Stack</dt><dd>Vector database · LLM · Web interface</dd></dl>
+      <dl><dt>Disciplines</dt><dd>NLP · Retrieval · Secure deployment</dd></dl>
+      <dl><dt>Delivered by</dt><dd><span class="by"><i></i>Unidata Lab</span></dd></dl>
+    </div>
+    <div class="tsf">
+      <p><span>In finance, pharma and legal, the AI question is not “can it answer?” It is “can we prove where the answer came from?”</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="featureblock panel">
+  <div class="inner">
+    <div class="fb-head rv">
+      <h2>What the community built</h2>
+      <p>The pieces of work this case is made of — each one owned end to end by the
+        member company that delivered it.</p>
+    </div>
+    <div class="fgrid">
+        <div class="fitem rv">
+          <div class="n">01</div>
+          <h3>Source-grounded answers</h3>
+          <p>The model may only answer from retrieved internal documents — no open-world guessing.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">02</div>
+          <h3>Traceable indexing</h3>
+          <p>Documents are parsed, chunked and stored with metadata in a vector database.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">03</div>
+          <h3>Citation per answer</h3>
+          <p>Every response links back to the document fragment it came from.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">04</div>
+          <h3>Admin-controlled uploads</h3>
+          <p>Only administrators add material; users query it.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">05</div>
+          <h3>Compliance logging</h3>
+          <p>Questions and answers are recorded for audit.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">06</div>
+          <h3>Secure self-hosting</h3>
+          <p>Docker deployment inside the client&#x27;s own environment — data never leaves.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="inner">
+    <div class="impact-head rv">
+      <h2>Impact this work delivered</h2>
+      <div class="impact-nav">
+        <button type="button" id="rail-prev" aria-label="Previous impact card">&#8249;</button>
+        <button type="button" id="rail-next" aria-label="Next impact card">&#8250;</button>
+      </div>
+    </div>
+    <div class="rail">
+        <article class="icard">
+          <div class="v">100%</div>
+          <p>Answers grounded in uploaded documents</p>
+        </article>
+        <article class="icard">
+          <div class="v">3</div>
+          <p>Document formats parsed</p>
+        </article>
+        <article class="icard">
+          <div class="v">Full</div>
+          <p>Source traceability per answer</p>
+        </article>
+        <article class="icard">
+          <div class="v">Self</div>
+          <p>Hosted — nothing leaves the org</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="narrative panel">
+  <div class="inner">
+    <h2 class="rv">How it came together</h2>
+    <div class="nrows">
+      <div class="nrow rv">
+        <h3>Grounded, cited, and logged</h3>
+        <p>Uploaded PDF, DOCX and HTML files are parsed, chunked and stored with metadata in a vector database, so every fragment stays addressable. A question triggers semantic search, and the language model composes an answer only from what it retrieved — each statement linked back to its source document. The interface keeps this visible rather than implied: users ask, read the answer, and follow the citation. Uploads are restricted to administrators, and compliance logging records what was asked and what was returned.</p>
+      </div>
+      <div class="nrow rv">
+        <h3>Section title placeholder</h3>
+        <p>Placeholder copy for this part of the story — to be replaced with the detail from the delivery team.</p>
+      </div>
+      <div class="nrow rv">
+        <h3>Section title placeholder</h3>
+        <p>Placeholder copy for this part of the story — to be replaced with the detail from the delivery team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="more">
+  <div class="inner">
+    <h2 class="rv">More cases</h2>
+    <div class="more-grid">
+      <a class="mcard wcard c-slate rv" href="case-fitness.html">
+        <div class="mtxt">
+          <div class="meye">Health &amp; Wellness · AI/ML</div>
+          <h3>AI fitness platform</h3>
+        </div>
+        <img src="../assets/photos/fitness-gym-wide.jpg" alt="">
+      </a>
+      <a class="mcard wcard c-teal rv" href="case-dubbing.html">
+        <div class="mtxt">
+          <div class="meye">Speech AI · Media Localisation</div>
+          <h3>AI dubbing</h3>
+        </div>
+        <img src="../assets/photos/w-dubbing.jpg" alt="">
+      </a>
+      <a class="mcard wcard c-sun rv" href="case-ordering.html">
+        <div class="mtxt">
+          <div class="meye">Voice AI / LLM · Retail Ops</div>
+          <h3>LLM order-taking</h3>
+        </div>
+        <img src="../assets/photos/w-fraud.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer on-dark">
+  <div class="inner">
+    <div class="footer-top">
+      <div>
+        <img class="mark" src="../assets/logo-unicorners-long-white.svg" alt="Unicorners">
+        <p>Community of AI and deep tech companies with Ukrainian roots.</p>
+      </div>
+      <nav>
+        <a href="index.html#what-we-do">What we do</a>
+        <a href="index.html#domains">Domains</a>
+        <a href="index.html#cases">Cases</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="cta-row">
+        <a class="btn btn-light btn-sm" href="index.html#contact">Discuss a project</a>
+        <a class="btn btn-ghost btn-sm" href="index.html#contact">Become a member</a>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; Unicorners</span>
+      <span>Placeholder: legal entity, address, policy links</span>
+    </div>
+  </div>
+</footer>
+
+<script src="case.js?v=1"></script>
+</body>
+</html>

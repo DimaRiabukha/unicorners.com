@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An LLM that writes in the company’s own voice. — Unicorners case study</title>
+<meta name="description" content="A generative system that drafts social posts, decodes internal acronyms from a company glossary and translates documents across formats while keeping their layout — fine-tuned on the client’s own writing so the output sounds like them.">
+<link rel="icon" href="../assets/logo-mark.png">
+<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="case.css?v=1">
+</head>
+<body>
+
+<!-- Header -->
+<div class="topbar" id="topbar">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="../assets/logo-unicorners-long.svg" alt="Unicorners"></a>
+    <nav class="nav">
+      <a href="index.html#what-we-do">What we do</a>
+      <a href="index.html#domains">Domains</a>
+      <a href="index.html#cases">Cases</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-dark btn-sm nav-cta" href="index.html#contact">Discuss a project</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html#what-we-do">What we do</a>
+    <a href="index.html#domains">Domains</a>
+    <a href="index.html#cases">Cases</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="btn btn-dark" href="index.html#contact">Discuss a project</a>
+  </nav>
+</div>
+
+<!-- Hero -->
+<section class="case-hero">
+  <div class="inner">
+    <div class="eyebrow">GenAI / LLM · Marketing</div>
+    <div class="case-head">
+      <h1>An LLM that writes in the company’s own voice.</h1>
+      <p class="excerpt">A generative system that drafts social posts, decodes internal acronyms from a company glossary and translates documents across formats while keeping their layout — fine-tuned on the client’s own writing so the output sounds like them.</p>
+    </div>
+    <div style="text-align:right">
+      <a class="backlink" href="index.html#cases">&#8592; All cases</a>
+    </div>
+  </div>
+</section>
+
+<!-- Story slideshow -->
+<section class="case-story">
+  <div class="inner">
+    <div class="story rv">
+      <div class="frames">
+        <img src="../assets/photos/w-geo.jpg" alt="" class="on">
+        <img src="../assets/covers/cs-vision.png" alt="">
+      </div>
+      <div class="bars">
+        <span class="bar on"><i></i></span>
+        <span class="bar"><i></i></span>
+      </div>
+      <span class="pill">Delivered by Amazinum</span>
+    </div>
+  </div>
+</section>
+
+<!-- Credits + scroll-fill paragraph -->
+<section class="case-meta">
+  <div class="inner storygrid">
+    <div class="credits rv">
+      <dl><dt>Client</dt><dd>Product company (NDA)</dd></dl>
+      <dl><dt>Delivered by</dt><dd>Amazinum, a Unicorners member</dd></dl>
+      <dl><dt>Scope</dt><dd>Generative content platform</dd></dl>
+      <dl><dt>Models</dt><dd>PaLM 2, fine-tuned</dd></dl>
+      <dl><dt>Stack</dt><dd>LangChain · Vertex AI · Cloud Build · Cloud Functions</dd></dl>
+      <dl><dt>Disciplines</dt><dd>Data science · Prompt engineering · MLOps</dd></dl>
+      <dl><dt>Delivered by</dt><dd><span class="by"><i></i>Amazinum</span></dd></dl>
+    </div>
+    <div class="tsf">
+      <p><span>Every company has a house style. Almost none of them can scale it.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="featureblock panel">
+  <div class="inner">
+    <div class="fb-head rv">
+      <h2>What the community built</h2>
+      <p>The pieces of work this case is made of — each one owned end to end by the
+        member company that delivered it.</p>
+    </div>
+    <div class="fgrid">
+        <div class="fitem rv">
+          <div class="n">01</div>
+          <h3>Fine-tuned house voice</h3>
+          <p>Trained on the company&#x27;s own writing via a Vertex AI pipeline, not a generic assistant.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">02</div>
+          <h3>Glossary-aware rewriting</h3>
+          <p>Few-shot prompting with in-context learning decodes internal acronyms for new readers.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">03</div>
+          <h3>Templated social generation</h3>
+          <p>Posts for Instagram, Facebook and LinkedIn run through LangChain against a post template.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">04</div>
+          <h3>Format-preserving translation</h3>
+          <p>Documents move between languages without losing their original formatting.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">05</div>
+          <h3>Conversational access</h3>
+          <p>LangChain plus Vertex AI gives end users a chat interface over the whole system.</p>
+        </div>
+        <div class="fitem rv">
+          <div class="n">06</div>
+          <h3>Production deployment</h3>
+          <p>Cloud Build and Cloud Functions turn the models into a maintained service.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="inner">
+    <div class="impact-head rv">
+      <h2>Impact this work delivered</h2>
+      <div class="impact-nav">
+        <button type="button" id="rail-prev" aria-label="Previous impact card">&#8249;</button>
+        <button type="button" id="rail-next" aria-label="Next impact card">&#8250;</button>
+      </div>
+    </div>
+    <div class="rail">
+        <article class="icard">
+          <div class="v">5</div>
+          <p>Generation tasks automated</p>
+        </article>
+        <article class="icard">
+          <div class="v">50+</div>
+          <p>Acronyms decoded from glossary</p>
+        </article>
+        <article class="icard">
+          <div class="v">Multi</div>
+          <p>Languages, formatting preserved</p>
+        </article>
+        <article class="icard">
+          <div class="v">1</div>
+          <p>Voice across every channel</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="narrative panel">
+  <div class="inner">
+    <h2 class="rv">How it came together</h2>
+    <div class="nrows">
+      <div class="nrow rv">
+        <h3>Teaching a model to sound like a specific company</h3>
+        <p>Sounding on-brand is not a prompt trick. The team prepared large volumes of the client&#x27;s own newsletters, replies and social copy, then fine-tuned on a Vertex AI pretraining pipeline until the model reproduced the company&#x27;s register rather than a generic corporate voice. Around that core sit narrower jobs: acronyms swapped for their full form from a custom company glossary so newcomers can read internal material, social posts generated to a fixed template, and documents translated across formats while keeping their original layout and styling intact.</p>
+      </div>
+      <div class="nrow rv">
+        <h3>Section title placeholder</h3>
+        <p>Placeholder copy for this part of the story — to be replaced with the detail from the delivery team.</p>
+      </div>
+      <div class="nrow rv">
+        <h3>Section title placeholder</h3>
+        <p>Placeholder copy for this part of the story — to be replaced with the detail from the delivery team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="more">
+  <div class="inner">
+    <h2 class="rv">More cases</h2>
+    <div class="more-grid">
+      <a class="mcard wcard c-slate rv" href="case-fitness.html">
+        <div class="mtxt">
+          <div class="meye">Health &amp; Wellness · AI/ML</div>
+          <h3>AI fitness platform</h3>
+        </div>
+        <img src="../assets/photos/fitness-gym-wide.jpg" alt="">
+      </a>
+      <a class="mcard wcard c-teal rv" href="case-dubbing.html">
+        <div class="mtxt">
+          <div class="meye">Speech AI · Media Localisation</div>
+          <h3>AI dubbing</h3>
+        </div>
+        <img src="../assets/photos/w-dubbing.jpg" alt="">
+      </a>
+      <a class="mcard wcard c-sun rv" href="case-ordering.html">
+        <div class="mtxt">
+          <div class="meye">Voice AI / LLM · Retail Ops</div>
+          <h3>LLM order-taking</h3>
+        </div>
+        <img src="../assets/photos/w-fraud.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer on-dark">
+  <div class="inner">
+    <div class="footer-top">
+      <div>
+        <img class="mark" src="../assets/logo-unicorners-long-white.svg" alt="Unicorners">
+        <p>Community of AI and deep tech companies with Ukrainian roots.</p>
+      </div>
+      <nav>
+        <a href="index.html#what-we-do">What we do</a>
+        <a href="index.html#domains">Domains</a>
+        <a href="index.html#cases">Cases</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="cta-row">
+        <a class="btn btn-light btn-sm" href="index.html#contact">Discuss a project</a>
+        <a class="btn btn-ghost btn-sm" href="index.html#contact">Become a member</a>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; Unicorners</span>
+      <span>Placeholder: legal entity, address, policy links</span>
+    </div>
+  </div>
+</footer>
+
+<script src="case.js?v=1"></script>
+</body>
+</html>
