@@ -33,6 +33,12 @@ The hero gradient is **animated**: the base gradient drifts across a 230% backgr
 three blurred brand-colour fields drift and scale on 15/19/24s cycles, and a light sweep crosses
 every 11s. All of it stops under `prefers-reduced-motion`.
 
+"AI and deep tech" also carries a **colour wave**, built the way manual.studio builds theirs:
+each character is its own span with a long `color` ease-out, and JS lights them one at a time
+from a five-colour palette so a rainbow band travels through the phrase. It plays on load, on
+hover, and every 12s; the palette lives in the `data-colors` attribute on `#cwave` in the HTML,
+so it can be retuned without touching the CSS. Skipped entirely under `prefers-reduced-motion`.
+
 The member names in the hero band run as an infinite **marquee** (two identical halves, 42s
 linear, `translateX(-50%)`), masked at both edges and paused on hover.
 

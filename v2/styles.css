@@ -181,6 +181,9 @@ p{color:var(--muted)}
 /* hand-drawn loop around a phrase — same construction as the reference:
    an open ellipse with an overshoot, stretched over the words, round caps */
 .u-ring{position:relative;display:inline-block;white-space:nowrap}
+/* per-character colour wave (ref: manual.studio) */
+.cwave{color:inherit}
+.cwc{transition:color .9s ease-out}
 .u-ring svg{position:absolute;left:-1.2%;top:-15%;width:103.5%;height:131%;overflow:visible;
   fill:none;stroke:var(--marker);stroke-width:7;stroke-linecap:round;pointer-events:none}
 
@@ -370,6 +373,7 @@ form.done .sent{display:block}
   .rv{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
   .hero,.mesh span,.hb-track{animation:none}
+  .cwc{transition:none}
   .mesh .sweep{display:none}
 }
 

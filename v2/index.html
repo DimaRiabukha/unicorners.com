@@ -36,7 +36,7 @@
 <section class="hero panel">
   <div class="mesh" aria-hidden="true"><span class="m1"></span><span class="m2"></span><span class="m3"></span><span class="sweep"></span></div>
   <div class="inner">
-    <h1>Community of<br><span class="line2"><span class="u-ring">AI and deep tech<svg viewBox="0 0 480 108" preserveAspectRatio="none" aria-hidden="true"><path d="M150 7C50 9-4 26-2 56c2 32 180 44 316 43 118-1 172-15 170-45-2-30-96-42-352-38" vector-effect="non-scaling-stroke"/></svg></span> companies</span></h1>
+    <h1>Community of<br><span class="line2"><span class="u-ring"><span class="cwave" id="cwave" aria-label="AI and deep tech" data-colors='["#FF6A16","#E5006E","#2B4BFF","#FFFFFF","#06635F"]'>AI and deep tech</span><svg viewBox="0 0 480 108" preserveAspectRatio="none" aria-hidden="true"><path d="M150 7C50 9-4 26-2 56c2 32 180 44 316 43 118-1 172-15 170-45-2-30-96-42-352-38" vector-effect="non-scaling-stroke"/></svg></span> companies</span></h1>
 
     <div class="hero-body">
       <div class="cta-row">
@@ -335,6 +335,46 @@
 const topbar = document.getElementById('topbar');
 const onScroll = () => topbar.classList.toggle('stuck', window.scrollY > 40);
 onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+// Colour wave across the hero phrase — per-character colour with a long ease-out
+// tail, one palette colour at a time (ref: manual.studio's data-highlight)
+const cwave = document.getElementById('cwave');
+if (cwave && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+  const colours = JSON.parse(cwave.dataset.colors);
+  const STAGGER = 70, HOLD = 320, REPLAY = 12000;
+  const phrase = cwave.textContent;
+  const chars = [];
+  cwave.textContent = '';
+  phrase.split('').forEach(ch => {
+    if (ch === ' ') { cwave.appendChild(document.createTextNode(' ')); return; }
+    const s = document.createElement('span');
+    s.className = 'cwc';
+    s.setAttribute('aria-hidden', 'true');
+    s.textContent = ch;
+    cwave.appendChild(s);
+    chars.push(s);
+  });
+
+  let running = false;
+  const playWave = () => {
+    if (running) return;
+    running = true;
+    chars.forEach((s, i) => {
+      const colour = colours[i % colours.length];
+      setTimeout(() => {
+        s.style.color = colour;
+        setTimeout(() => { s.style.color = ''; }, HOLD);
+      }, i * STAGGER);
+    });
+    setTimeout(() => { running = false; }, chars.length * STAGGER + HOLD + 900);
+  };
+
+  cwave.addEventListener('pointerenter', playWave);
+  setTimeout(playWave, 600);
+  setInterval(() => { if (!document.hidden) playWave(); }, REPLAY);
+}
+
+// Colour wave ends
 
 // Hero client quotes — rotate every 5s, like the reference (PLACEHOLDER attributions)
 const quotes = [
