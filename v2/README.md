@@ -80,7 +80,10 @@ shows Cases first — anchors work either way; reorder the nav if you want them 
   indents, varying heights (64–158px), an even 12px gap, small title left and a member logo right.
   Each band unrolls from the left as it scrolls into view (staggered 70ms) and scales 1.02 on hover
   with its logo scaling 1.06. Six carry real cases and link to their pages; four are placeholders.
-  Band colours are placeholders. White logo variants were generated from the member SVGs
+  The first band is the live **Fitness App demo** — it opens
+  `demo1.fitness-apps.qarea.org/member/index.html` in a new tab and carries a white dumbbell icon
+  (`icon-dumbbell-white.svg`, from the SVG Repo file supplied) beside its title. Band colours are
+  placeholders. White logo variants were generated from the member SVGs
   (`logo-*-white.svg`); the reference's own artwork is canvas-drawn client branding and was not copied.
 
 - **Case imagery** — only three real photographs exist in the shared asset set (gym, training,
